@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bu8qey87rj6vm"]
 
-[ext_resource type="Script" path="res://ball.gd" id="1_wrl8s"]
+[ext_resource type="Script" path="res://Ball/ball.gd" id="1_wrl8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bkis"]
 
 [node name="Ball" type="CharacterBody2D"]
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_wrl8s")
 

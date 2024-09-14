@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://j8neqvovxkay"]
 
-[ext_resource type="Script" path="res://paddle.gd" id="1_xsun7"]
+[ext_resource type="Script" path="res://Paddle/paddle.gd" id="1_xsun7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bkis"]
 size = Vector2(12, 96)
 
 [node name="Paddle" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_xsun7")
 

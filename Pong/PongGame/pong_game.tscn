@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpnls6grkt6ns"]
 
-[ext_resource type="PackedScene" uid="uid://bu8qey87rj6vm" path="res://ball.tscn" id="1_aia7q"]
-[ext_resource type="Script" path="res://pong_game.gd" id="1_s6xdw"]
-[ext_resource type="PackedScene" uid="uid://j8neqvovxkay" path="res://paddle.tscn" id="2_0p1m1"]
+[ext_resource type="PackedScene" uid="uid://bu8qey87rj6vm" path="res://Ball/ball.tscn" id="1_aia7q"]
+[ext_resource type="Script" path="res://PongGame/pong_game.gd" id="1_s6xdw"]
+[ext_resource type="PackedScene" uid="uid://j8neqvovxkay" path="res://Paddle/paddle.tscn" id="2_0p1m1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsgnx"]
 size = Vector2(1320, 20)
@@ -21,6 +21,8 @@ offset_bottom = 740.0
 color = Color(0, 0, 0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
 
 [node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(640, -10)
@@ -31,12 +33,12 @@ position = Vector2(640, 730)
 shape = SubResource("RectangleShape2D_umgad")
 
 [node name="Ball" parent="." instance=ExtResource("1_aia7q")]
-position = Vector2(155, 194)
+position = Vector2(640, 360)
 
 [node name="Paddle" parent="." instance=ExtResource("2_0p1m1")]
-position = Vector2(27, 220)
+position = Vector2(30, 150)
 player_num = 1
 
 [node name="Paddle2" parent="." instance=ExtResource("2_0p1m1")]
-position = Vector2(1262, 597)
+position = Vector2(1250, 570)
 player_num = 2
