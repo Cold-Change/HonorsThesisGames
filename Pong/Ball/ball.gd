@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @export var initSpeed = 200
-@export var speed = Vector2.ZERO
+@onready var speed = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	runMovementBehavior()
 	move_and_slide()
 

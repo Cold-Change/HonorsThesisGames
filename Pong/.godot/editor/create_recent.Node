@@ -1,3 +1,10 @@
+Label
+Line2D
+HBoxContainer
+CenterContainer
+Container
+VFlowContainer
+HFlowContainer
 Timer
 CharacterBody2D
 ColorRect
