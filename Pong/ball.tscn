@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu8qey87rj6vm"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_wrl8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bkis"]
+
+[node name="Ball" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_wrl8s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1bkis")
+
+[node name="RefX" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="RefY" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true

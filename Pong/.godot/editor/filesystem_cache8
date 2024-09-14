@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1726261785
+ball.gd::GDScript::-1::1726261385::0::1::::<>CharacterBody2D<>::
+ball.tscn::PackedScene::3859301950413595114::1726261551::0::1::::<><>::res://ball.gd
+icon.svg::CompressedTexture2D::290108208959694339::1726254153::1726254161::1::::<><>::
+paddle.gd::GDScript::-1::1726261671::0::1::::<>CharacterBody2D<>::
+paddle.tscn::PackedScene::700621396187417288::1726261671::0::1::::<><>::res://paddle.gd
+pong_game.tscn::PackedScene::5853212602249413792::1726261566::0::1::::<><>::uid://bu8qey87rj6vm::::res://ball.tscn<>uid://j8neqvovxkay::::res://paddle.tscn
