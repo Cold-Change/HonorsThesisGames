@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Label
 Line2D
 HBoxContainer
@@ -8,5 +10,4 @@ HFlowContainer
 Timer
 CharacterBody2D
 ColorRect
-CollisionShape2D
 StaticBody2D

@@ -8,9 +8,14 @@ extends Node2D
 
 @onready var ball = $Ball
 @onready var state = "start"
+@onready var paddle_zone = "Up2"
 var p1_score = 0
 var p2_score = 0
 var turn = 0
+
+func _ready():
+	$Paddle.paddleZone.connect(setPaddleStrength)
+	$Paddle2.paddleZone.connect(setPaddleStrength)
 
 func _physics_process(_delta):
 	if state == "play":
@@ -41,9 +46,9 @@ func resetPlayArea():
 
 func initBallMovement():
 	if turn % 2 == 0:
-		ball.speed = [ball.initSpeed,randi_range(-ball.initSpeed*1.5,ball.initSpeed*1.5)]
+		ball.speed = [ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
 	else:
-		ball.speed = [-ball.initSpeed,randi_range(-ball.initSpeed*1.5,ball.initSpeed*1.5)]
+		ball.speed = [-ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
 	turn += 1
 
 func checkWinner():
@@ -66,3 +71,8 @@ func restartGame():
 	p2_score_label.text = str(p2_score)
 	state = "start"
 	resetPlayArea()
+
+func setPaddleStrength(zone):
+	ball.paddle_zone = zone
+	print(zone)
+	

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var player_num : int
 @export var speed = 300
+signal paddleZone
 
 func _physics_process(_delta):
 	var direction : float
@@ -22,3 +23,15 @@ func _physics_process(_delta):
 	else:
 		velocity.y = 0
 	move_and_slide()
+
+func _on_down_2_body_entered(_body):
+	paddleZone.emit("Down2")
+
+func _on_down_1_body_entered(_body):
+	paddleZone.emit("Down1")
+
+func _on_up_1_body_entered(_body):
+	paddleZone.emit("Up1")
+
+func _on_up_2_body_entered(_body):
+	paddleZone.emit("Up2")

@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://j8neqvovxkay"]
+[gd_scene load_steps=7 format=3 uid="uid://j8neqvovxkay"]
 
 [ext_resource type="Script" path="res://Paddle/paddle.gd" id="1_xsun7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bkis"]
 size = Vector2(12, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6grr5"]
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58g7y"]
+size = Vector2(20, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axod7"]
+size = Vector2(20, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rdy2"]
+size = Vector2(20, 19)
 
 [node name="Paddle" type="CharacterBody2D"]
 collision_layer = 4
@@ -20,3 +32,39 @@ offset_bottom = 48.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1bkis")
+
+[node name="Down2" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down2"]
+position = Vector2(0, 39.5)
+shape = SubResource("RectangleShape2D_6grr5")
+
+[node name="Down1" type="Area2D" parent="."]
+position = Vector2(0, -24)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down1"]
+position = Vector2(0, 38)
+shape = SubResource("RectangleShape2D_58g7y")
+
+[node name="Up1" type="Area2D" parent="."]
+position = Vector2(0, -48)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up1"]
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_axod7")
+
+[node name="Up2" type="Area2D" parent="."]
+position = Vector2(0, -72)
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up2"]
+position = Vector2(0, 32.5)
+shape = SubResource("RectangleShape2D_2rdy2")
+
+[connection signal="body_entered" from="Down2" to="." method="_on_down_2_body_entered"]
+[connection signal="body_entered" from="Down1" to="." method="_on_down_1_body_entered"]
+[connection signal="body_entered" from="Up1" to="." method="_on_up_1_body_entered"]
+[connection signal="body_entered" from="Up2" to="." method="_on_up_2_body_entered"]
