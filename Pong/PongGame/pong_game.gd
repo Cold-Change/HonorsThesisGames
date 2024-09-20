@@ -74,5 +74,4 @@ func restartGame():
 
 func setPaddleStrength(zone):
 	ball.paddle_zone = zone
-	print(zone)
 	

@@ -6,16 +6,16 @@
 size = Vector2(12, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6grr5"]
-size = Vector2(20, 19)
+size = Vector2(38, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58g7y"]
-size = Vector2(20, 18)
+size = Vector2(38, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axod7"]
-size = Vector2(20, 18)
+size = Vector2(38, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rdy2"]
-size = Vector2(20, 19)
+size = Vector2(38, 19)
 
 [node name="Paddle" type="CharacterBody2D"]
 collision_layer = 4
