@@ -1,3 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1726800450
+::res://::1726880884
 icon.svg::CompressedTexture2D::173001273933103242::1726286990::1726450442::1::::<><>::
+platformer_level_1.tscn::PackedScene::5134628911040837330::1726880813::0::1::::<><>::uid://chm8u8pfkhifj::::res://player.tscn<>uid://ditxw72afqlkb::::res://Tilemaps/dungeon_tilemap.tscn
+player.gd::GDScript::-1::1726872474::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::5290976939223983371::1726880814::0::1::::<><>::res://player.gd
+::res://Background Graphics/::1726881185
+Cloud1.png::CompressedTexture2D::1201318452935927539::1726881185::1726881186::1::::<><>::
+Cloud2.png::CompressedTexture2D::909529756226684242::1726881185::1726881186::1::::<><>::
+Cloud3.png::CompressedTexture2D::4516712880500303483::1726881185::1726881186::1::::<><>::
+Cloud4.png::CompressedTexture2D::1527968615505905304::1726881185::1726881186::1::::<><>::
+Cloud5.png::CompressedTexture2D::3410572107183889461::1726881185::1726881186::1::::<><>::
+Cloud6.png::CompressedTexture2D::4636040279488010296::1726881185::1726881186::1::::<><>::
+Cloud7.png::CompressedTexture2D::9122814251283529297::1726881185::1726881186::1::::<><>::
+Mountains1.png::CompressedTexture2D::8635800778658622999::1726881185::1726881186::1::::<><>::
+Mountains2.png::CompressedTexture2D::2069527142980602887::1726881185::1726881186::1::::<><>::
+Mountains3.png::CompressedTexture2D::1397175599755607095::1726881185::1726881186::1::::<><>::
+Mountains4.png::CompressedTexture2D::1804386519209547053::1726881185::1726881186::1::::<><>::
+Sky.png::CompressedTexture2D::3995426134663212366::1726881185::1726881186::1::::<><>::
+Sun.png::CompressedTexture2D::5639943357850866260::1726881185::1726881186::1::::<><>::
+::res://Tilemaps/::1726880814
+DungeonTilesBlue.png::CompressedTexture2D::505468646785065168::1726871913::1726871913::1::::<><>::
+DungeonTilesBlueBackground.png::CompressedTexture2D::4603712858537376599::1726871913::1726871913::1::::<><>::
+dungeon_tilemap.tscn::PackedScene::7761433478274481809::1726880814::0::1::::<><>::uid://hg3827ffcvlg::::res://Tilemaps/DungeonTilesBlue.png
+dungeon_tilemap_background.tscn::PackedScene::4079949010397289610::1726871913::0::1::::<><>::uid://b6ucqi071mc5t::::res://Tilemaps/DungeonTilesBlueBackground.png

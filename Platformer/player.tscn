@@ -3,17 +3,33 @@
 [ext_resource type="Script" path="res://player.gd" id="1_q72pb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc2an"]
-size = Vector2(14, 28)
+size = Vector2(6, 14)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_q72pb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -7.0
-offset_top = -14.0
-offset_right = 7.0
-offset_bottom = 14.0
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 3.0
+offset_bottom = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tc2an")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTime" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="WallJumpTime" type="Timer" parent="Timers"]
+wait_time = 0.08
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -40)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
