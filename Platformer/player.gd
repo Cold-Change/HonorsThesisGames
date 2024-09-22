@@ -17,6 +17,9 @@ extends CharacterBody2D
 @onready var coyote_time = $Timers/CoyoteTime
 @onready var wall_jump_time = $Timers/WallJumpTime
 
+func _ready():
+	Globals.player_init_position = position
+
 func _physics_process(delta):
 	var was_on_wall_only = is_on_wall_only()
 	var was_on_floor = is_on_floor()
@@ -29,6 +32,7 @@ func _physics_process(delta):
 	handle_jump()
 	manage_timers(was_on_wall_only, was_on_floor)
 	move_and_slide()
+	Globals.player_position = position
 
 func apply_gravity(delta):
 	velocity.y += gravity * gravity_scale * delta

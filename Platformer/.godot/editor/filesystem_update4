@@ -1,4 +1,6 @@
-res://player.tscn
-res://player.gd
 res://platformer_level_1.tscn
+res://player.tscn
 res://Tilemaps/dungeon_tilemap.tscn
+res://Globals.gd
+res://parallax_item.gd
+res://player.gd
