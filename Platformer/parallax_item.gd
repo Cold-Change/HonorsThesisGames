@@ -9,7 +9,7 @@ extends Sprite2D
 
 @onready var parallax_position = [1,0,2]
 
-const SPEEDS = [.3,.2,.1,.08,.05,.03,.01,.005,.001]
+const SPEEDS = {"Fast3":.15,"Fast2":.1,"Fast1":.05,"Medium3":.04,"Medium2":.025,"Medium1":.015,"Slow3":.005,"Slow2":.0025,"Slow1":.0005}
 
 func _ready():
 	if item_type != "Static":
@@ -27,56 +27,46 @@ func _ready():
 		child_2 = duplicate_sprite_right
 
 func _physics_process(_delta):
+	checkParallax()
+	applyParallax()
+
+func checkParallax():
 	if parallax_position[0] == 1:
 		if Globals.player_position.x - position.x > texture.get_width():
 			shiftParallax("Right")
-		elif Globals.player_position.x - position.x < -texture.get_width():
+		elif Globals.player_position.x - position.x < 0:
 			shiftParallax("Left")
 	elif parallax_position[1] == 1:
 		if Globals.player_position.x - position.x - child_1.position.x > texture.get_width():
 			shiftParallax("Right")
-		elif Globals.player_position.x - position.x - child_1.position.x < -texture.get_width():
+		elif Globals.player_position.x - position.x - child_1.position.x < 0:
 			shiftParallax("Left")
 	elif parallax_position[2] == 1:
 		if Globals.player_position.x - position.x - child_2.position.x > texture.get_width():
 			shiftParallax("Right")
-		elif Globals.player_position.x - position.x - child_2.position.x < -texture.get_width():
+		elif Globals.player_position.x - position.x - child_2.position.x < 0:
 			shiftParallax("Left")
-	
-	if item_type == "Fast3":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[0]
-	elif item_type == "Fast2":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[1]
-	elif item_type == "Fast1":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[2]
-	elif item_type == "Medium3":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[3]
-	elif item_type == "Medium2":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[4]
-	elif item_type == "Medium1":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[5]
-	elif item_type == "Slow3":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[6]
-	elif item_type == "Slow2":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[7]
-	elif item_type == "Slow1":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[8]
+
+func applyParallax():
+	if item_type != "Static":
+		position.x = init_position.x + position_shift - (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
 	else:
-		position.x = Globals.player_position.x - texture.get_width()/2
+		position.x = Globals.player_position.x - texture.get_width()/2 + init_position.x
 
 func shiftParallax(direction):
 	if direction == "Left":
 		if parallax_position == [1,0,2]:
 			child_2.position.x -= texture.get_width()*3
-			parallax_position == [2,1,0]
+			parallax_position = [2,1,0]
 		elif parallax_position == [2,1,0]:
 			child_1.position.x += texture.get_width()*3
 			child_2.position.x += texture.get_width()*3
 			position.x -= texture.get_width()*3
-			parallax_position == [0,2,1]
+			position_shift -= texture.get_width()*3
+			parallax_position = [0,2,1]
 		elif parallax_position == [0,2,1]:
 			child_1.position.x -= texture.get_width()*3
-			parallax_position == [1,0,2]
+			parallax_position = [1,0,2]
 	else:
 		if parallax_position == [1,0,2]:
 			child_1.position.x += texture.get_width()*3
