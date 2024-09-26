@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @export var item_type : String
+@export var mobile_speed : String
+@export var mobile_const = 150
 @onready var init_position = position
 @onready var position_shift = 0
 
@@ -9,8 +11,8 @@ extends Sprite2D
 
 @onready var parallax_position = [1,0,2]
 
-#const SPEEDS = {"Fast3":.15,"Fast2":.1,"Fast1":.05,"Medium3":.04,"Medium2":.025,"Medium1":.015,"Slow3":.005,"Slow2":.0025,"Slow1":.0005}
 const SPEEDS = {"Fast3":.3,"Fast2":.2,"Fast1":.1,"Medium3":.08,"Medium2":.05,"Medium1":.03,"Slow3":.01,"Slow2":.005,"Slow1":.001}
+const MOBILE_SPEEDS = {"Fast":.3,"Medium":.2,"Slow":.1}
 
 func _ready():
 	if item_type != "Static":
@@ -26,16 +28,15 @@ func _ready():
 		duplicate_sprite_left.name = name + "L"
 		child_1 = duplicate_sprite_left
 		child_2 = duplicate_sprite_right
-		print(child_1.texture)
-		print(child_1.position.x)
-		print(child_1.name)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	if child_1:
 		checkParallax()
 		applyParallax()
 	elif item_type == "Static":
 		applyStatic()
+	if mobile_speed:
+		applyMobile(delta)
 
 func checkParallax():
 	if parallax_position[0] == 1:
@@ -87,3 +88,6 @@ func shiftParallax(direction):
 
 func applyStatic():
 	position.x = Globals.player_position.x - texture.get_width()/2 + init_position.x
+
+func applyMobile(delta):
+	position_shift -= MOBILE_SPEEDS[mobile_speed]*mobile_const*delta
