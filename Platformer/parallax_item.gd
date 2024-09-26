@@ -26,11 +26,16 @@ func _ready():
 		duplicate_sprite_left.name = name + "L"
 		child_1 = duplicate_sprite_left
 		child_2 = duplicate_sprite_right
+		print(child_1.texture)
+		print(child_1.position.x)
+		print(child_1.name)
 
 func _physics_process(_delta):
-	if child_1 or item_type == "Static":
+	if child_1:
 		checkParallax()
 		applyParallax()
+	elif item_type == "Static":
+		applyStatic()
 
 func checkParallax():
 	if parallax_position[0] == 1:
@@ -50,10 +55,7 @@ func checkParallax():
 			shiftParallax("Left")
 
 func applyParallax():
-	if item_type != "Static":
-		position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
-	else:
-		position.x = Globals.player_position.x - texture.get_width()/2 + init_position.x
+	position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
 
 func shiftParallax(direction):
 	if direction == "Left":
@@ -83,3 +85,5 @@ func shiftParallax(direction):
 			position_shift += texture.get_width()*3
 			parallax_position = [2,1,0]
 
+func applyStatic():
+	position.x = Globals.player_position.x - texture.get_width()/2 + init_position.x

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cffit8yhc7jfe"]
+[gd_scene load_steps=18 format=3 uid="uid://cffit8yhc7jfe"]
 
 [ext_resource type="PackedScene" uid="uid://chm8u8pfkhifj" path="res://Player/player.tscn" id="1_6ysib"]
 [ext_resource type="PackedScene" uid="uid://ditxw72afqlkb" path="res://Tilemaps/dungeon_tilemap.tscn" id="1_l4l3t"]
+[ext_resource type="Script" path="res://Player/player_camera.gd" id="3_3lch2"]
 [ext_resource type="Texture2D" uid="uid://bw6oc46adxbis" path="res://Background Graphics/Sky.png" id="3_dyyi4"]
 [ext_resource type="Texture2D" uid="uid://cmmbbp26dknhs" path="res://Background Graphics/Sun.png" id="4_swgb1"]
 [ext_resource type="Script" path="res://parallax_item.gd" id="4_y8bwq"]
@@ -25,84 +26,92 @@ layer_0/tile_data = PackedInt32Array(1966129, 65536, 0, 1966128, 65536, 0, 19661
 [node name="Player" parent="." instance=ExtResource("1_6ysib")]
 position = Vector2(584, 680)
 
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("background_image", "player")]
+position = Vector2(584, 600)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+script = ExtResource("3_3lch2")
+background_image = NodePath("../ParallaxBackground/Sky")
+player = NodePath("../Player")
+
 [node name="ParallaxBackground" type="Node2D" parent="."]
 z_index = -1
-position = Vector2(504, -256)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("3_dyyi4")
 script = ExtResource("4_y8bwq")
 item_type = "Static"
 
 [node name="Sun" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("4_swgb1")
 script = ExtResource("4_y8bwq")
 item_type = "Static"
 
 [node name="Cloud7" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("5_nep5n")
 script = ExtResource("4_y8bwq")
 item_type = "Slow1"
 
 [node name="Cloud6" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("6_q2hoh")
 script = ExtResource("4_y8bwq")
 item_type = "Slow3"
 
 [node name="Cloud5" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("7_nt64m")
 script = ExtResource("4_y8bwq")
 item_type = "Slow3"
 
 [node name="Cloud4" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("8_uiw82")
 script = ExtResource("4_y8bwq")
 item_type = "Medium1"
 
 [node name="Cloud3" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("9_lhpcx")
 script = ExtResource("4_y8bwq")
 item_type = "Medium1"
 
 [node name="Cloud2" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("10_v06cn")
 script = ExtResource("4_y8bwq")
 item_type = "Medium2"
 
 [node name="Cloud1" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(136, 640)
+position = Vector2(640, 360)
 texture = ExtResource("11_3xw0j")
 script = ExtResource("4_y8bwq")
 item_type = "Medium2"
 
 [node name="Mountains4" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(88, 616)
+position = Vector2(600, 360)
 texture = ExtResource("12_3me78")
 script = ExtResource("4_y8bwq")
 item_type = "Medium3"
 
 [node name="Mountains3" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(160, 616)
+position = Vector2(672, 360)
 texture = ExtResource("13_m4df4")
 script = ExtResource("4_y8bwq")
 item_type = "Fast1"
 
 [node name="Mountains2" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(72, 616)
+position = Vector2(584, 360)
 texture = ExtResource("14_sry6h")
 script = ExtResource("4_y8bwq")
 item_type = "Fast2"
 
 [node name="Mountains1" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(144, 616)
+position = Vector2(656, 360)
 texture = ExtResource("15_fybam")
 script = ExtResource("4_y8bwq")
 item_type = "Fast3"

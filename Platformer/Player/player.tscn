@@ -29,12 +29,6 @@ one_shot = true
 wait_time = 0.5
 autostart = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -40)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-position_smoothing_speed = 20.0
-
 [node name="SpriteSheet" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, 0)
 texture = ExtResource("2_88aye")
