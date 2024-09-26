@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://chm8u8pfkhifj"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_q72pb"]
+[ext_resource type="Texture2D" uid="uid://ddc58kcxe7ww8" path="res://Player/PlayerCharacter-Sheet.png" id="2_88aye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc2an"]
+size = Vector2(4, 23)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+script = ExtResource("1_q72pb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_tc2an")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="CoyoteTime" type="Timer" parent="Timers"]
+wait_time = 0.1
+one_shot = true
+
+[node name="WallJumpTime" type="Timer" parent="Timers"]
+wait_time = 0.08
+one_shot = true
+
+[node name="SpriteAnimationTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -40)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+
+[node name="SpriteSheet" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+texture = ExtResource("2_88aye")
+hframes = 7
+
+[connection signal="timeout" from="Timers/SpriteAnimationTimer" to="." method="_on_sprite_animation_timer_timeout"]

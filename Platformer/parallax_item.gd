@@ -28,7 +28,7 @@ func _ready():
 		child_2 = duplicate_sprite_right
 
 func _physics_process(_delta):
-	if child_1:
+	if child_1 or item_type == "Static":
 		checkParallax()
 		applyParallax()
 
@@ -48,8 +48,6 @@ func checkParallax():
 			shiftParallax("Right")
 		elif Globals.player_position.x - position.x - child_2.position.x < 0:
 			shiftParallax("Left")
-	if name == "Mountains1":
-		print(parallax_position)
 
 func applyParallax():
 	if item_type != "Static":
