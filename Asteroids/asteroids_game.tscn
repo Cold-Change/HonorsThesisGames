@@ -13,3 +13,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_e412r")]
 position = Vector2(608, 380)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

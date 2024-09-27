@@ -1,3 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727388678
+::res://::1727453130
+asteroid.tscn::PackedScene::1778749837203246560::1727451101::0::1::::<><>::
+asteroids_game.gd::GDScript::-1::1727451077::0::1::::<>Node2D<>::
+asteroids_game.tscn::PackedScene::4189161240774568406::1727451101::0::1::::<><>::res://asteroids_game.gd<>uid://du2tr6fr0weke::::res://player.tscn
 icon.svg::CompressedTexture2D::2547178377447761225::1727388675::1727388679::1::::<><>::
+player.gd::GDScript::-1::1727450956::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::8619962741313067656::1727451101::0::1::::<><>::res://player.gd

@@ -5,6 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbat6"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_e7pjr")
 
@@ -12,4 +14,16 @@ script = ExtResource("1_e7pjr")
 shape = SubResource("CircleShape2D_cbat6")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-7, 7, 0, -10, 7, 7)
+polygon = PackedVector2Array(-8, 6, 0, -10, 8, 6)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Invulnerability" type="Timer" parent="Timers"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cbat6")
