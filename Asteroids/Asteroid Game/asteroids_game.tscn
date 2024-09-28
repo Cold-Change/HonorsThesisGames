@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0xi4x4vxqqyw"]
 
-[ext_resource type="Script" path="res://asteroids_game.gd" id="1_wfecq"]
-[ext_resource type="PackedScene" uid="uid://du2tr6fr0weke" path="res://player.tscn" id="2_e412r"]
-[ext_resource type="PackedScene" uid="uid://0lv0q6v87sqi" path="res://asteroid.tscn" id="3_mw3x2"]
+[ext_resource type="Script" path="res://Asteroid Game/asteroids_game.gd" id="1_wfecq"]
+[ext_resource type="PackedScene" uid="uid://du2tr6fr0weke" path="res://Player/player.tscn" id="2_e412r"]
+[ext_resource type="PackedScene" uid="uid://0lv0q6v87sqi" path="res://Asteroid/asteroid.tscn" id="3_mw3x2"]
 
 [node name="AsteroidsGame" type="Node2D"]
 script = ExtResource("1_wfecq")

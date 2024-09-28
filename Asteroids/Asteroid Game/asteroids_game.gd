@@ -41,3 +41,4 @@ func updateLives():
 func playerIsDamaged():
 	lives -= 1
 	updateLives()
+	player.velocity *= -.1

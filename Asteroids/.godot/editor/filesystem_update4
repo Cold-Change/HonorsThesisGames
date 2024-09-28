@@ -1,6 +1,8 @@
-res://player.gd
-res://player.tscn
 res://asteroids_game.tscn
-res://asteroids_game.gd
+res://player.tscn
 res://asteroid.tscn
-res://asteroid.gd
+res://Player/player.tscn
+res://Asteroid Game/asteroids_game.tscn
+res://Asteroid/asteroid.tscn
+res://Player/player.gd
+res://Asteroid Game/asteroids_game.gd

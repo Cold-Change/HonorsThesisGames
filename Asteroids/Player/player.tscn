@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://du2tr6fr0weke"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_e7pjr"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_e7pjr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbat6"]
 
