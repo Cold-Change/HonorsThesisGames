@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 500
-@export var acceleration = 250
+@export var speed = 250
+@export var acceleration = 600
+@onready var init_acceleration = acceleration
 
 @onready var area_2d = $Area2D
 @onready var invulnerability_timer = $Timers/Invulnerability
@@ -16,8 +17,18 @@ func _physics_process(delta):
 func handleMovement(delta):
 	var turn = Input.get_axis("left","right")
 	if Input.is_action_pressed("propulsion"):
-		velocity.x = move_toward(velocity.x,speed,sin(rotation)*acceleration*delta)
-		velocity.y = move_toward(velocity.y,speed,-cos(rotation)*acceleration*delta)
+		if velocity.x + sin(rotation)*acceleration*delta > speed:
+			velocity.x = speed
+		elif velocity.x + sin(rotation)*acceleration*delta < -speed:
+			velocity.x = -speed
+		else:
+			velocity.x += sin(rotation)*acceleration*delta
+		if velocity.y + -cos(rotation)*acceleration*delta > speed:
+			velocity.y = speed
+		elif velocity.y + -cos(rotation)*acceleration*delta < -speed:
+			velocity.y = -speed
+		else:
+			velocity.y += -cos(rotation)*acceleration*delta
 	if turn:
 		rotate(PI*turn*delta)
 
@@ -36,7 +47,9 @@ func _on_area_2d_body_entered(body):
 		body.break()
 	receiveDamage.emit()
 	area_2d.set_deferred("monitoring",false)
+	acceleration = 100
 	invulnerability_timer.start()
 
 func _on_invulnerability_timeout():
 	area_2d.set_deferred("monitoring",true)
+	acceleration = init_acceleration
