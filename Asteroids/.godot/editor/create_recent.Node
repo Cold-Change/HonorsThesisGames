@@ -1,8 +1,8 @@
+Node2D
 Area2D
 CollisionShape2D
 Polygon2D
 RigidBody2D
-Node2D
 Timer
 Node
 Control

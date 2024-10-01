@@ -14,8 +14,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_e412r")]
 position = Vector2(608, 380)
-speed = 250
-acceleration = 400
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -36,3 +34,5 @@ position = Vector2(598, 206)
 
 [node name="Asteroid4" parent="Asteroids" instance=ExtResource("3_mw3x2")]
 position = Vector2(696, 524)
+
+[node name="Lasers" type="Node2D" parent="."]

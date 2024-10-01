@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name Asteroid
 
 @onready var size = 5
-@onready var splits = 4
+@onready var splits = 2
 @onready var speed : Vector2
 
 func _ready():
@@ -30,16 +30,16 @@ func breakAsteroid():
 func initMovement():
 	var angle = randf_range(-PI,PI)
 	if size == 5:
-		speed = Vector2(randi_range(200,250)*sin(angle),randi_range(200,250)*-cos(angle))
+		speed = Vector2(randi_range(50,100)*sin(angle),randi_range(50,100)*-cos(angle))
 	elif size == 4:
-		speed = Vector2(randi_range(200,250)*sin(angle),randi_range(200,250)*-cos(angle))
+		speed = Vector2(randi_range(125,175)*sin(angle),randi_range(125,175)*-cos(angle))
 		scale *= .75
 	elif size == 3:
-		speed = Vector2(randi_range(300,350)*sin(angle),randi_range(300,350)*-cos(angle))
+		speed = Vector2(randi_range(225,275)*sin(angle),randi_range(225,275)*-cos(angle))
 		scale *= .5
 	elif size == 2:
-		speed = Vector2(randi_range(400,450)*sin(angle),randi_range(400,450)*-cos(angle))
+		speed = Vector2(randi_range(350,400)*sin(angle),randi_range(350,400)*-cos(angle))
 		scale *= .25
 	elif size == 1:
-		speed = Vector2(randi_range(500,550)*sin(angle),randi_range(500,550)*-cos(angle))
+		speed = Vector2(randi_range(450,500)*sin(angle),randi_range(450,500)*-cos(angle))
 		scale *= .15
