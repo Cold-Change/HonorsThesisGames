@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727447965
-Globals.gd::GDScript::-1::1726964239::0::1::::<>Node<>::
+::res://::1727828613
+Globals.gd::GDScript::-1::1727448334::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::173001273933103242::1726286990::1726450442::1::::<><>::
-parallax_item.gd::GDScript::-1::1727388004::0::1::::<>Sprite2D<>::
-platformer_level_1.tscn::PackedScene::5134628911040837330::1727388005::0::1::::<><>::uid://chm8u8pfkhifj::::res://Player/player.tscn<>uid://ditxw72afqlkb::::res://Tilemaps/dungeon_tilemap.tscn<>res://Player/player_camera.gd<>uid://bw6oc46adxbis::::res://Background Graphics/Sky.png<>uid://cmmbbp26dknhs::::res://Background Graphics/Sun.png<>res://parallax_item.gd<>uid://d28fohbr0uwv6::::res://Background Graphics/Cloud7.png<>uid://b7by52oe5soaq::::res://Background Graphics/Cloud6.png<>uid://boudvhyb66abl::::res://Background Graphics/Cloud5.png<>uid://v1fojmd4h1u7::::res://Background Graphics/Cloud4.png<>uid://b5l6upbhdpklv::::res://Background Graphics/Cloud3.png<>uid://m7t27p16jnv3::::res://Background Graphics/Cloud2.png<>uid://rd6sls1mly3d::::res://Background Graphics/Cloud1.png<>uid://0yb8nuf7cn7j::::res://Background Graphics/Mountains4.png<>uid://t52jpmo27rln::::res://Background Graphics/Mountains3.png<>uid://4qq2r812c3n4::::res://Background Graphics/Mountains2.png<>uid://dvbim27iwnarn::::res://Background Graphics/Mountains1.png
+parallax_item.gd::GDScript::-1::1727448337::0::1::::<>Sprite2D<>::
+platformer_level_1.tscn::PackedScene::5134628911040837330::1727643823::0::1::::<><>::uid://chm8u8pfkhifj::::res://Player/player.tscn<>uid://ditxw72afqlkb::::res://Tilemaps/dungeon_tilemap.tscn<>res://Player/player_camera.gd<>uid://bw6oc46adxbis::::res://Background Graphics/Sky.png<>uid://cmmbbp26dknhs::::res://Background Graphics/Sun.png<>res://parallax_item.gd<>uid://d28fohbr0uwv6::::res://Background Graphics/Cloud7.png<>uid://b7by52oe5soaq::::res://Background Graphics/Cloud6.png<>uid://boudvhyb66abl::::res://Background Graphics/Cloud5.png<>uid://v1fojmd4h1u7::::res://Background Graphics/Cloud4.png<>uid://b5l6upbhdpklv::::res://Background Graphics/Cloud3.png<>uid://m7t27p16jnv3::::res://Background Graphics/Cloud2.png<>uid://rd6sls1mly3d::::res://Background Graphics/Cloud1.png<>uid://0yb8nuf7cn7j::::res://Background Graphics/Mountains4.png<>uid://t52jpmo27rln::::res://Background Graphics/Mountains3.png<>uid://4qq2r812c3n4::::res://Background Graphics/Mountains2.png<>uid://dvbim27iwnarn::::res://Background Graphics/Mountains1.png
 ::res://Background Graphics/::1727308426
 Cloud1.png::CompressedTexture2D::1201318452935927539::1727189135::1727188788::1::::<><>::
 Cloud2.png::CompressedTexture2D::909529756226684242::1727189135::1727188788::1::::<><>::
@@ -18,13 +18,13 @@ Mountains3.png::CompressedTexture2D::1397175599755607095::1727193378::1727193379
 Mountains4.png::CompressedTexture2D::1804386519209547053::1727193378::1727193379::1::::<><>::
 Sky.png::CompressedTexture2D::3995426134663212366::1727308425::1727308426::1::::<><>::
 Sun.png::CompressedTexture2D::5639943357850866260::1727189135::1727188788::1::::<><>::
-::res://Player/::1727388005
+::res://Player/::1727454024
 player.gd::GDScript::-1::1727311057::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::5290976939223983371::1727388005::0::1::::<><>::res://Player/player.gd<>uid://ddc58kcxe7ww8::::res://Player/PlayerCharacter-Sheet.png
+player.tscn::PackedScene::5290976939223983371::1727454024::0::1::::<><>::res://Player/player.gd<>uid://ddc58kcxe7ww8::::res://Player/PlayerCharacter-Sheet.png
 PlayerCharacter-Sheet.png::CompressedTexture2D::7375838307858129669::1727305570::1727305571::1::::<><>::
-player_camera.gd::GDScript::-1::1727375279::0::1::::<>Camera2D<>::
-::res://Tilemaps/::1727388005
+player_camera.gd::GDScript::-1::1727448819::0::1::::<>Camera2D<>::
+::res://Tilemaps/::1727454024
 DungeonTilesBlue.png::CompressedTexture2D::505468646785065168::1726871913::1726871913::1::::<><>::
 DungeonTilesBlueBackground.png::CompressedTexture2D::4603712858537376599::1726871913::1726871913::1::::<><>::
-dungeon_tilemap.tscn::PackedScene::7761433478274481809::1727388005::0::1::::<><>::uid://hg3827ffcvlg::::res://Tilemaps/DungeonTilesBlue.png
+dungeon_tilemap.tscn::PackedScene::7761433478274481809::1727454024::0::1::::<><>::uid://hg3827ffcvlg::::res://Tilemaps/DungeonTilesBlue.png
 dungeon_tilemap_background.tscn::PackedScene::4079949010397289610::1726871913::0::1::::<><>::uid://b6ucqi071mc5t::::res://Tilemaps/DungeonTilesBlueBackground.png

@@ -1,7 +1,8 @@
 res://Asteroid Game/asteroids_game.tscn
+res://Asteroid Game/asteroids_game.gd
+res://Globals.gd
 res://Player/player.tscn
 res://Asteroid/asteroid.tscn
 res://Player/laser.tscn
 res://Player/laser.gd
 res://Player/player.gd
-res://Asteroid/asteroid.gd

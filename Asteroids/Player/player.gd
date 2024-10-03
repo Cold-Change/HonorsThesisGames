@@ -58,7 +58,7 @@ func handleInvulnerability():
 	if invulnerability_timer.is_stopped():
 		visible = true
 	else:
-		if int(floor(invulnerability_timer.time_left*2)) % 2 == 0:
+		if int(floor(invulnerability_timer.time_left*2.5)) % 2 == 0:
 			visible = false
 		else:
 			visible = true
