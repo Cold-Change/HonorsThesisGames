@@ -63,14 +63,17 @@ func handleInvulnerability():
 		else:
 			visible = true
 
-func _on_area_2d_body_entered(body):
-	if body.has_method("breakAsteroid"):
-		body.call_deferred("breakAsteroid")
-	receiveDamage.emit()
+func initInvulnerability():
 	area_2d.set_deferred("monitoring",false)
 	acceleration = 200
 	friction = 50
 	invulnerability_timer.start()
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("breakAsteroid"):
+		body.call_deferred("breakAsteroid")
+	receiveDamage.emit()
+	initInvulnerability()
 
 func _on_invulnerability_timeout():
 	area_2d.set_deferred("monitoring",true)

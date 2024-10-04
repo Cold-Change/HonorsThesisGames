@@ -1,6 +1,7 @@
+CollisionPolygon2D
+CenterContainer
 HBoxContainer
 VBoxContainer
-CenterContainer
 Label
 Control
 Node2D
@@ -12,4 +13,3 @@ Polygon2D
 RigidBody2D
 Timer
 Node
-Panel

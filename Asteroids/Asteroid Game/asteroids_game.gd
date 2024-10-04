@@ -8,25 +8,28 @@ extends Node2D
 @onready var high_score_label = $UI/Scores/HighScore
 @onready var score_label = $UI/Scores/Score
 @onready var game_over_labels = $UI/GameOver
+@onready var game_over_text = $UI/GameOver/VBoxContainer/GameOverText
 @onready var score_text = $UI/GameOver/VBoxContainer/HBoxContainer/ScoreText
 @onready var high_score_text = $UI/GameOver/VBoxContainer/HBoxContainer/HighScoreText
 
-var lives = 0
+var lives : int
+var state = "start"
 
 var window_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 var window_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	updateLives()
 	player.receiveDamage.connect(playerIsDamaged)
 	high_score_label.text = "High Score: " + str(Globals.high_score)
-	game_over_labels.visible = false
-	score_labels.visible = true
+	game_over_labels.visible = true
+	score_labels.visible = false
+	#clearAsteroids()
+	updateLives()
+	resetPlayerPosition()
 
 func _process(delta):
-	if player != null:
-		checkPosition(player)
+	runStateMachine()
 	updateScoreLabel()
 	for asteroid in asteroids.get_children():
 		checkPosition(asteroid)
@@ -61,13 +64,53 @@ func playerIsDamaged():
 	lives -= 1
 	if lives < 0:
 		gameOver()
+		state = "game_over"
 	else:
 		updateLives()
 		player.velocity *= -.05
 
 func gameOver():
+	game_over_text.text = "GAME OVER"
 	score_text.text = "Score: " + str(Globals.score)
 	high_score_text.text = "High Score: " + str(Globals.high_score)
-	game_over_labels.visible = true
-	score_labels.visible = false
-	player.queue_free()
+	toggleUIVisibility()
+	resetPlayerPosition()
+
+func toggleUIVisibility():
+	game_over_labels.visible = !game_over_labels.visible
+	score_labels.visible = !score_labels.visible
+
+func runStateMachine():
+	if Input.is_action_just_pressed("accept"):
+		if state == "start":
+			state = "running"
+			Globals.score = 0
+			initPlayer()
+			toggleUIVisibility()
+		elif state == "game_over":
+			state = "start"
+			game_over_text.text = "PLAY AGAIN?"
+	if state == "running":
+		checkPosition(player)
+	if state == "start" and game_over_labels.visible == true:
+		game_over_text.text = "PLAY AGAIN?"
+
+func resetPlayerPosition():
+	player.visible = false
+	player.position = Vector2(window_width,window_height)/2
+	player.rotation = 0
+	get_tree().paused = true
+
+func initPlayer():
+	get_tree().paused = false
+	player.visible = true
+	player.position = Vector2(window_width,window_height)/2
+	player.rotation = 0
+	player.velocity = Vector2.ZERO
+	player.initInvulnerability()
+	lives = 3
+	updateLives()
+
+func clearAsteroids():
+	for asteroid in asteroids.get_children():
+		asteroid.queue_free()
