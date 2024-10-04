@@ -22,6 +22,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	player.receiveDamage.connect(playerIsDamaged)
 	high_score_label.text = "High Score: " + str(Globals.high_score)
+	high_score_text.text = "High Score: " + str(Globals.high_score)
 	game_over_labels.visible = true
 	score_labels.visible = false
 	#clearAsteroids()
@@ -88,8 +89,9 @@ func runStateMachine():
 			initPlayer()
 			toggleUIVisibility()
 		elif state == "game_over":
-			state = "start"
-			game_over_text.text = "PLAY AGAIN?"
+			#state = "start"
+			#game_over_text.text = "PLAY AGAIN?"
+			get_tree().change_scene_to_file("res://Asteroid Game/asteroids_game.tscn")
 	if state == "running":
 		checkPosition(player)
 	if state == "start" and game_over_labels.visible == true:

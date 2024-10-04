@@ -3,4 +3,4 @@ res://Asteroid Game/asteroids_game.gd
 res://Player/player.tscn
 res://Asteroid/asteroid.tscn
 res://Player/laser.tscn
-res://Player/player.gd
+res://Asteroid/asteroid.gd

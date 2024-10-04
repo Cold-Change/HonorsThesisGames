@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0lv0q6v87sqi" path="res://Asteroid/asteroid.tscn" id="3_mw3x2"]
 
 [node name="AsteroidsGame" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_wfecq")
 
 [node name="BackGround" type="ColorRect" parent="."]
