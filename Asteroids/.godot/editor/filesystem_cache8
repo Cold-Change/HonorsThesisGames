@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728005211
+::res://::1728058579
 Globals.gd::GDScript::-1::1727980612::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::2547178377447761225::1727388675::1727643837::1::::<><>::
-::res://Asteroid/::1728004810
-asteroid.gd::GDScript::-1::1728004809::0::1::::Asteroid<>RigidBody2D<>::
-asteroid.tscn::PackedScene::1778749837203246560::1728004810::0::1::::<><>::res://Asteroid/asteroid.gd
-::res://Asteroid Game/::1728004856
+::res://Asteroid/::1728005882
+asteroid.gd::GDScript::-1::1728005727::0::1::::Asteroid<>RigidBody2D<>::
+asteroid.tscn::PackedScene::1778749837203246560::1728005882::0::1::::<><>::res://Asteroid/asteroid.gd
+::res://Asteroid Game/::1728005881
 asteroids_game.gd::GDScript::-1::1728004856::0::1::::<>Node2D<>::
-asteroids_game.tscn::PackedScene::4189161240774568406::1728004856::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
-::res://Player/::1728004810
+asteroids_game.tscn::PackedScene::4189161240774568406::1728005881::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
+::res://Player/::1728005882
 laser.gd::GDScript::-1::1727983202::0::1::::<>RigidBody2D<>::
-laser.tscn::PackedScene::8016835751242416159::1728004810::0::1::::<><>::res://Player/laser.gd
+laser.tscn::PackedScene::8016835751242416159::1728005882::0::1::::<><>::res://Player/laser.gd
 player.gd::GDScript::-1::1728003577::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8619962741313067656::1728004810::0::1::::<><>::res://Player/player.gd
+player.tscn::PackedScene::8619962741313067656::1728005881::0::1::::<><>::res://Player/player.gd
