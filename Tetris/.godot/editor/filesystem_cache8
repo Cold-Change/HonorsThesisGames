@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728273302
+::res://::1728326897
+Globals.gd::GDScript::-1::1728273866::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::5186515266444135508::1728059384::1728059388::1::::<><>::
-Globals.gd::GDScript::-1::1728272981::0::1::::<>Node<>::
-::res://Tetris Game/::1728272981
-tetris_game.tscn::PackedScene::4399483732167240289::1728272981::0::1::::<><>::uid://c4am382fvcuf2::::res://Tetromino/tetromino.tscn
-::res://Tetromino/::1728272862
-tetromino_square.tscn::PackedScene::2655944885827183051::1728272862::0::1::::<><>::uid://d2srjrb214np6::::res://Tetromino/Square Graphics/TetrominoSquares-Sheet.png
-tetromino.gd::GDScript::-1::1728272814::0::1::::<>Area2D<>::
-tetromino.tscn::PackedScene::6809098214267291989::1728272862::0::1::::<><>::res://Tetromino/tetromino.gd<>uid://bd3ta3am8p1n8::::res://Tetromino/tetromino_square.tscn
+::res://Tetris Game/::1728326846
+tetris_game.tscn::PackedScene::4399483732167240289::1728326846::0::1::::<><>::uid://c4am382fvcuf2::::res://Tetromino/tetromino.tscn
+::res://Tetromino/::1728326846
+tetromino.gd::GDScript::-1::1728326846::0::1::::<>Area2D<>::
+tetromino.tscn::PackedScene::6809098214267291989::1728326532::0::1::::<><>::res://Tetromino/tetromino.gd<>uid://bd3ta3am8p1n8::::res://Tetromino/tetromino_square.tscn
+tetromino_square.tscn::PackedScene::2655944885827183051::1728326532::0::1::::<><>::uid://d2srjrb214np6::::res://Tetromino/Square Graphics/TetrominoSquares-Sheet.png
 ::res://Tetromino/Square Graphics/::1728273306
 TetrominoSquares-Sheet.png::CompressedTexture2D::9092568785605840889::1728273306::1728273306::1::::<><>::

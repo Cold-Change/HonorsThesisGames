@@ -1,11 +1,9 @@
 extends Area2D
 
-@export var tetromino_type : String
-
 var cells = Globals.cells
 var tetromino = Globals.Tetromino
 
-func _ready():
+func initTetromino(tetromino_type):
 	for i in cells[tetromino[tetromino_type]]:
 		var new_square = load("res://Tetromino/tetromino_square.tscn").instantiate()
 		if i != Vector2.ZERO:
