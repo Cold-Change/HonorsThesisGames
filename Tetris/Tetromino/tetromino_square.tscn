@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd3ta3am8p1n8"]
+
+[ext_resource type="Texture2D" uid="uid://d2srjrb214np6" path="res://Tetromino/Square Graphics/TetrominoSquares-Sheet.png" id="1_567ty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5ofq"]
+size = Vector2(32, 32)
+
+[node name="TetrominoSquare" type="CollisionShape2D"]
+position = Vector2(16, -16)
+shape = SubResource("RectangleShape2D_q5ofq")
+
+[node name="TetrominoSquares-sheet" type="Sprite2D" parent="."]
+texture = ExtResource("1_567ty")
+hframes = 7

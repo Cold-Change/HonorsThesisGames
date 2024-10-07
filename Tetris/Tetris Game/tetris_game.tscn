@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3xe4bti0auyr"]
+
+[ext_resource type="PackedScene" uid="uid://c4am382fvcuf2" path="res://Tetromino/tetromino.tscn" id="1_g5153"]
+
+[node name="TetrisGame" type="Node2D"]
+
+[node name="Tetromino" parent="." instance=ExtResource("1_g5153")]
+position = Vector2(543, 368)
+tetromino_type = "T"
