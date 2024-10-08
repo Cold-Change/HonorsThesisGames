@@ -2,8 +2,10 @@ extends Area2D
 
 var cells = Globals.cells
 var tetromino = Globals.Tetromino
+var shape : String
 
 func initTetromino(tetromino_type):
+	shape = tetromino_type
 	for i in cells[tetromino[tetromino_type]]:
 		var new_square = load("res://Tetromino/tetromino_square.tscn").instantiate()
 		if i != Vector2.ZERO:
