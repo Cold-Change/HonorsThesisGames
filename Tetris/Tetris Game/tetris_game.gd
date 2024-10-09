@@ -94,10 +94,20 @@ func manageTetrominoMovement():
 	if Input.is_action_just_pressed("left") and checkPositionOnMove("left"):
 		get_node("Tetromino").position.x -= 32
 	if Input.is_action_just_pressed("down"):
-		get_node("Tetromino").position.y += 32
+		shiftTetrominoDown()
 		movement_timer.start()
+	if Input.is_action_just_pressed("accept"):
+		if board.checkForOverlap(convertTetrominoToArray()):
+			board.lockTetrominoToBoard(convertTetrominoToArray(),get_node("Tetromino").shape)
+			createNewTetromino()
+
+func shiftTetrominoDown():
+	if has_node("Tetromino"):
+		get_node("Tetromino").position.y += 32
 
 func createNewTetromino():
+	if has_node("Tetromino"):
+		get_node("Tetromino").free()
 	var new_tetromino = tetromino.instantiate()
 	add_child(new_tetromino)
 	new_tetromino.name = "Tetromino"
@@ -107,9 +117,7 @@ func createNewTetromino():
 	movement_timer.start()
 
 func _on_movement_timer_timeout():
-	if has_node("Tetromino"):
-		get_node("Tetromino").position.y += 32
-		convertTetrominoToArray()
+	shiftTetrominoDown()
 
 func convertTetrominoToArray():
 	if has_node("Tetromino"):
@@ -126,4 +134,4 @@ func convertTetrominoToArray():
 			else:
 				square_position = termino_position + floor(square.position / 32)
 			array_to_return.append(square_position.x + square_position.y*10 + 40)
-		print(array_to_return)
+		return array_to_return
