@@ -78,10 +78,6 @@ func kickOffWall(direction):
 	if direction != '':
 		kickOffWall(checkForWallKick())
 
-func _on_movement_timer_timeout():
-	if has_node("Tetromino"):
-		get_node("Tetromino").position.y += 32
-
 func manageTetrominoMovement():
 	if Input.is_action_just_pressed("up"):
 		if floor(get_node("Tetromino").rotation) == 4:
@@ -106,7 +102,28 @@ func createNewTetromino():
 	add_child(new_tetromino)
 	new_tetromino.name = "Tetromino"
 	new_tetromino.position = Vector2(board_width/2,32)
+	#new_tetromino.initTetromino("I")
 	new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
 	movement_timer.start()
 
-	
+func _on_movement_timer_timeout():
+	if has_node("Tetromino"):
+		get_node("Tetromino").position.y += 32
+		convertTetrominoToArray()
+
+func convertTetrominoToArray():
+	if has_node("Tetromino"):
+		var termino_position = get_node("Tetromino").position / 32
+		var array_to_return = []
+		for square in get_node("Tetromino").get_children():
+			var square_position : Vector2
+			if floor(get_node("Tetromino").rotation) == 1:
+				square_position = termino_position - ceil(Vector2(square.position.y,-square.position.x) / 32)
+			elif floor(get_node("Tetromino").rotation) == 3:
+				square_position = termino_position - ceil(square.position / 32)
+			elif floor(get_node("Tetromino").rotation) == 4:
+				square_position = termino_position + floor(Vector2(square.position.y,-square.position.x) / 32)
+			else:
+				square_position = termino_position + floor(square.position / 32)
+			array_to_return.append(square_position.x + square_position.y*10 + 40)
+		print(array_to_return)
