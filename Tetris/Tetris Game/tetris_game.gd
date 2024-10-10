@@ -88,11 +88,24 @@ func manageTetrominoMovement():
 			get_node("Tetromino").rotation += PI/2
 			for square in get_node("Tetromino").get_children():
 				square.rotation -= PI/2
+		if !board.checkForOverlap(convertTetrominoToArray()):
+			if floor(get_node("Tetromino").rotation) == 0:
+				get_node("Tetromino").rotation = (3*PI)/2
+				for square in get_node("Tetromino").get_children():
+					square.rotation = -(3*PI)/2
+			else:
+				get_node("Tetromino").rotation -= PI/2
+				for square in get_node("Tetromino").get_children():
+					square.rotation += PI/2
 		kickOffWall(checkForWallKick())
 	if Input.is_action_just_pressed("right") and checkPositionOnMove("right"):
 		get_node("Tetromino").position.x += 32
+		if !board.checkForOverlap(convertTetrominoToArray()):
+			get_node("Tetromino").position.x -= 32
 	if Input.is_action_just_pressed("left") and checkPositionOnMove("left"):
 		get_node("Tetromino").position.x -= 32
+		if !board.checkForOverlap(convertTetrominoToArray()):
+			get_node("Tetromino").position.x += 32
 	if Input.is_action_just_pressed("down"):
 		shiftTetrominoDown()
 		movement_timer.start()
@@ -103,11 +116,26 @@ func manageTetrominoMovement():
 
 func shiftTetrominoDown():
 	if has_node("Tetromino"):
-		get_node("Tetromino").position.y += 32
+		var tetromino_can_move = true
+		var tetromino_locked = false
+		for i in convertTetrominoToArray():
+			var last_row = [230,231,232,233,234,235,236,237,238,239]
+			if last_row.has(int(i)) and !tetromino_locked:
+				board.lockTetrominoToBoard(convertTetrominoToArray(),get_node("Tetromino").shape)
+				createNewTetromino()
+				tetromino_can_move = false
+				tetromino_locked = true
+		if tetromino_can_move:
+			get_node("Tetromino").position.y += 32
+			if !board.checkForOverlap(convertTetrominoToArray()):
+				get_node("Tetromino").position.y -= 32
+				board.lockTetrominoToBoard(convertTetrominoToArray(),get_node("Tetromino").shape)
+				createNewTetromino()
 
 func createNewTetromino():
 	if has_node("Tetromino"):
-		get_node("Tetromino").free()
+		get_node("Tetromino").name = "OldTetromino"
+		get_node("OldTetromino").queue_free()
 	var new_tetromino = tetromino.instantiate()
 	add_child(new_tetromino)
 	new_tetromino.name = "Tetromino"

@@ -13,9 +13,10 @@ func lockTetrominoToBoard(tetromino_array,tetromino_type):
 
 func updateBoard():
 	for square in get_children():
-		square.free()
+		if !board_array[int(square.name.get_slice('Square',1))]:
+			square.free()
 	for i in board_array.size():
-		if board_array[i]:
+		if board_array[i] and !has_node("Square" + str(i)):
 			var x = i % 10
 			var y = i / 10
 			var new_square = load("res://Tetromino/tetromino_square.tscn").instantiate()
@@ -29,33 +30,3 @@ func checkForOverlap(tetromino_array):
 		if board_array[i]:
 			return false #There is overlap
 	return true #There is no overlap
-
-#func checkForTetrominoToBoard():
-	#for square in get_node("Tetromino").get_children():
-		##if floor(get_node("Tetromino").rotation) == 1:
-			##
-		##elif floor(get_node("Tetromino").rotation) == 3:
-			##
-		##elif floor(get_node("Tetromino").rotation) == 4:
-			##
-		##else:
-		#if ceil((get_node("Tetromino").position.y + square.position.y) / 32) == 20:
-			#tetrominoToBoard()
-			#break
-#
-#func tetrominoToBoard():
-	#var termino_position = get_node("Tetromino").position / 32
-	#for i in Globals.cells[Globals.Tetromino[get_node("Tetromino").shape]]:
-		#i += termino_position
-		#board_array[i.x + i.y*10 + 30] = get_node("Tetromino").shape
-	#print(board_array)
-	#get_node("Tetromino").free()
-	#updateBoard()
-	#createNewTetromino()
-#
-#func updateBoard():
-	#for i in board_array:
-		#if i:
-			#var new_square = load("res://Tetromino/tetromino_square.tscn").instantiate()
-			#board.add_child(new_square)
-			#new_square.get_node("TetrominoSquares-sheet").set_frame(Globals.Tetromino[i])
