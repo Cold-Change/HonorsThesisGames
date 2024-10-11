@@ -10,7 +10,6 @@ motion_mode = 1
 wall_min_slide_angle = 3.14159
 safe_margin = 0.02
 script = ExtResource("1_wrl8s")
-initSpeed = 500
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -10.0

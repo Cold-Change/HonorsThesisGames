@@ -101,7 +101,6 @@ shape = SubResource("RectangleShape2D_umgad")
 
 [node name="Ball" parent="." instance=ExtResource("1_aia7q")]
 position = Vector2(640, 360)
-initSpeed = 300
 
 [node name="Paddle" parent="." instance=ExtResource("2_0p1m1")]
 position = Vector2(30, 150)

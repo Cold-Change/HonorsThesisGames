@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var initSpeed = 200
+@export var initSpeed = 300
 @onready var speed = Vector2.ZERO
 @onready var paddle_zone = "Up2"
 
