@@ -1,12 +1,14 @@
+Label
+VBoxContainer
+Control
+Panel
 Node
+Timer
 Polygon2D
 TextureRect
 LightOccluder2D
 ColorRect
 Camera2D
-Panel
 GridContainer
-Timer
 Area2D
 CollisionShape2D
-RigidBody2D

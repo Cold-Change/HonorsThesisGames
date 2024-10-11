@@ -1,22 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3xe4bti0auyr"]
+[gd_scene load_steps=6 format=3 uid="uid://b3xe4bti0auyr"]
 
 [ext_resource type="Script" path="res://Tetris Game/tetris_game.gd" id="1_g711u"]
 [ext_resource type="Texture2D" uid="uid://cfaq0pf1uywvs" path="res://Tetris Game/Board Graphics/Frame.png" id="2_2qnwp"]
 [ext_resource type="Texture2D" uid="uid://bytrp71wbamec" path="res://Tetris Game/Board Graphics/GridSquare.png" id="2_pfuws"]
 [ext_resource type="Script" path="res://Tetris Game/board.gd" id="4_vkfov"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq5li"]
+
 [node name="TetrisGame" type="Node2D"]
 script = ExtResource("1_g711u")
 
 [node name="MovementTimer" type="Timer" parent="."]
 
+[node name="CleanupTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 384)
-zoom = Vector2(1.5, 1.5)
 
 [node name="Background" type="Polygon2D" parent="Camera2D"]
 z_index = 1
-color = Color(0.14902, 0.321569, 0.407843, 1)
+color = Color(0.0724526, 0.310805, 0.501253, 1)
 polygon = PackedVector2Array(-320, 640, -320, -640, 320, -640, 320, 640, 170, 266, 170, -394, -170, -394, -170, 266, 170, 266, 320, 640)
 
 [node name="Frame" type="TextureRect" parent="."]
@@ -36,4 +41,138 @@ stretch_mode = 1
 [node name="Board" type="Node" parent="."]
 script = ExtResource("4_vkfov")
 
+[node name="Cleanup" type="Node" parent="."]
+
+[node name="Start" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -256.0
+offset_right = 480.0
+offset_bottom = 1024.0
+
+[node name="Panel" type="Panel" parent="Start"]
+modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 586.0
+offset_bottom = -586.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fq5li")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Start/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Start Game?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Start/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press \"ENTER\" to Begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -256.0
+offset_right = 480.0
+offset_bottom = 1024.0
+
+[node name="Panel" type="Panel" parent="GameOver"]
+modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 567.0
+offset_bottom = -567.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fq5li")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="GameOver/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Your score is 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="GameOver/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "The high score is 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Running" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -256.0
+offset_right = 480.0
+offset_bottom = 1024.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Running"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -635.0
+offset_right = -11.0
+offset_bottom = -563.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HgihScore" type="Label" parent="Running/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "High Score: 0"
+
+[node name="Score" type="Label" parent="Running/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]
