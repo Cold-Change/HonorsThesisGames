@@ -1,3 +1,4 @@
+TextureRect
 Label
 VBoxContainer
 Control
@@ -5,7 +6,6 @@ Panel
 Node
 Timer
 Polygon2D
-TextureRect
 LightOccluder2D
 ColorRect
 Camera2D

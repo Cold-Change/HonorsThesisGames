@@ -42,12 +42,14 @@ func _physics_process(delta):
 	move_and_slide()
 	Globals.player_position = position
 
+#Applies gravity to player
 func apply_gravity(delta):
 	if state != "float":
 		velocity.y = move_toward(velocity.y, terminal_velocity, gravity * gravity_scale * delta)
 	else:
 		velocity.y = move_toward(velocity.y, terminal_velocity/15, gravity * gravity_scale * delta)
-	
+
+#According to input, accelerates player left or right to max player speed
 func handle_movement(delta):
 	var direction = Input.get_axis("left", "right")
 	var acceleration = speed * 10
@@ -61,18 +63,26 @@ func handle_movement(delta):
 	elif is_on_floor():
 		state = "idle"
 
+#Applies friction to player speed according to contact with surfaces
 func handle_friction(delta):
+	#Apply friction when on wall
 	if is_on_wall_only() and (velocity.y + gravity * delta) >= 100:
 		velocity.y = 100
+	
+	#Apply friction or air resistance
 	if is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, air_resistance * delta)
 
+#Handles player jump
 func handle_jump():
+	#Resest player jump and double jump when on floor
 	if is_on_floor():
 		can_jump = true
 		can_double_jump = true
+	
+	#Apply jump or double jump
 	if Input.is_action_just_pressed("jump") and coyote_time.time_left > 0 and can_jump:
 		velocity.y = jump_velocity
 		can_jump = false
@@ -81,9 +91,12 @@ func handle_jump():
 		can_jump = false
 	elif double_jump_unlocked:
 		handle_double_jump()
+	
+	#Conditional for handling wall jump
 	if wall_jump_unlocked:
 		handle_wall_jump()
 
+#Handles player wall jump
 func handle_wall_jump():
 	if Input.is_action_just_pressed("jump") and wall_jump_time.time_left > 0:
 		velocity.y = jump_velocity
@@ -94,6 +107,7 @@ func handle_wall_jump():
 		velocity.x = last_wall_normal.x * speed
 		can_double_jump = true
 
+#Handles player double jump
 func handle_double_jump():
 	if wall_jump_unlocked:
 		if Input.is_action_just_pressed("jump") and not is_on_floor() and not is_on_wall() and can_double_jump:
@@ -104,12 +118,14 @@ func handle_double_jump():
 			velocity.y = jump_velocity
 			can_double_jump = false
 
+#Starts timers according to contact with wall and floor
 func manage_timers(was_on_wall, was_on_floor):
 	if (was_on_wall and not is_on_wall()) or is_on_wall_only():
 		wall_jump_time.start()
 	if (was_on_floor and not is_on_floor() and velocity.y >= 0) or is_on_floor():
 		coyote_time.start()
 
+#Handle player states and animations
 func handleAnimation():
 	var direction = Input.get_axis("left", "right")
 	if is_on_wall_only():
@@ -134,6 +150,7 @@ func handleAnimation():
 	elif state == "walk" and sprite_sheet.frame < 2 or sprite_sheet.frame > 3:
 		sprite_sheet.frame = 2
 
+#Timer signal on a loop to cycle animation frames
 func _on_sprite_animation_timer_timeout():
 	if state == "idle":
 		if sprite_sheet.frame == 0:

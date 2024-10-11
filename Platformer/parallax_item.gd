@@ -15,6 +15,7 @@ const SPEEDS = {"Fast3":.3,"Fast2":.2,"Fast1":.1,"Medium3":.08,"Medium2":.05,"Me
 const MOBILE_SPEEDS = {"Fast":.3,"Medium":.2,"Slow":.1}
 
 func _ready():
+	#If the object is not static, create a duplicate image to the left and right
 	if item_type != "Static":
 		var duplicate_sprite_right = Sprite2D.new()
 		var duplicate_sprite_left = Sprite2D.new()
@@ -30,14 +31,18 @@ func _ready():
 		child_2 = duplicate_sprite_right
 
 func _physics_process(delta):
+	#Apply parallax or static
 	if child_1:
 		checkParallax()
 		applyParallax()
 	elif item_type == "Static":
 		applyStatic()
+	
+	#Apply mobile
 	if mobile_speed:
 		applyMobile(delta)
 
+#Checks for player position and shifts the parallax left or right accordingly
 func checkParallax():
 	if parallax_position[0] == 1:
 		if Globals.player_position.x - position.x > texture.get_width():
@@ -55,9 +60,12 @@ func checkParallax():
 		elif Globals.player_position.x - position.x - child_2.position.x < 0:
 			shiftParallax("Left")
 
+#Moves parallax background according to change of player position from player initial position
 func applyParallax():
 	position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
 
+#Rotates the position of parallax item and duplicates according to the
+#rotation state and the direction of the shift
 func shiftParallax(direction):
 	if direction == "Left":
 		if parallax_position == [1,0,2]:
@@ -86,8 +94,10 @@ func shiftParallax(direction):
 			position_shift += texture.get_width()*3
 			parallax_position = [2,1,0]
 
+#Sticks background to player position
 func applyStatic():
 	position.x = Globals.player_position.x - texture.get_width()/2 + init_position.x
 
+#Moves object according to mobile speed
 func applyMobile(delta):
 	position_shift -= MOBILE_SPEEDS[mobile_speed]*mobile_const*delta

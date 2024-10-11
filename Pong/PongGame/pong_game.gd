@@ -14,10 +14,15 @@ var p2_score = 0
 var turn = 0
 
 func _ready():
+	#Connect signal paddleZone from paddle to function setPaddleStrength
 	$Paddle.paddleZone.connect(setPaddleStrength)
 	$Paddle2.paddleZone.connect(setPaddleStrength)
 
 func _physics_process(_delta):
+	#Simple state machine
+	#If in play, run checkPosition
+	#If in start and player starts the game, initialize play
+	#If in game over and player resets the game, restart the game
 	if state == "play":
 		checkPosition()
 	elif state == "start" and Input.is_action_just_pressed("accept"):
@@ -25,18 +30,23 @@ func _physics_process(_delta):
 		initBallMovement()
 	elif state == "game_over" and Input.is_action_just_pressed("accept"):
 		restartGame()
-	
+
+#Checks the position of the ball
 func checkPosition():
+	#When the ball crosses the boarder of the screen, add a point to the opposite side
 	if ball.position.x < 0:
 		p2_score += 1
 	elif ball.position.x > 1280:
 		p1_score += 1
+	#When the ball gets past either boarder, update score labels, 
+	#check for a winner, and reset the play area
 	if ball.position.x < 0 or ball.position.x > 1280:
 		p1_score_label.text = str(p1_score)
 		p2_score_label.text = str(p2_score)
 		checkWinner()
 		resetPlayArea()
 
+#Resets ball position and speed as well as game state
 func resetPlayArea():
 	ball.position = Vector2(640,360)
 	ball.velocity = Vector2.ZERO
@@ -44,6 +54,7 @@ func resetPlayArea():
 	if state != "game_over":
 		state = "start"
 
+#Initializes ball movement
 func initBallMovement():
 	if turn % 2 == 0:
 		ball.speed = [ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
@@ -51,6 +62,7 @@ func initBallMovement():
 		ball.speed = [-ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
 	turn += 1
 
+#Checks for winner and ends game if a winner is found
 func checkWinner():
 	if p1_score >= 11 or p2_score >= 11:
 		game_over_message_2.visible = true
@@ -61,6 +73,8 @@ func checkWinner():
 		game_over_message.visible = true
 		state = "game_over"
 
+#Full reset of the game
+#Scores are cleared, labels are reset, state is changed
 func restartGame():
 	p1_score = 0
 	p2_score = 0
@@ -72,6 +86,7 @@ func restartGame():
 	state = "start"
 	resetPlayArea()
 
+#Setter for ball, affects angle the ball bounces at when colliding with paddle
 func setPaddleStrength(zone):
 	ball.paddle_zone = zone
 	

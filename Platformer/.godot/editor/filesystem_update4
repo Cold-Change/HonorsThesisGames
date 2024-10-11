@@ -1,3 +1,6 @@
 res://platformer_level_1.tscn
+res://Player/player_camera.gd
+res://parallax_item.gd
+res://Player/player.gd
 res://Player/player.tscn
 res://Tilemaps/dungeon_tilemap.tscn

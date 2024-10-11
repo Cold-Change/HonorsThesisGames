@@ -1,5 +1,3 @@
 res://Tetris Game/tetris_game.tscn
-res://Tetris Game/board.gd
 res://Tetromino/tetromino.tscn
 res://Tetromino/tetromino_square.tscn
-res://Tetris Game/tetris_game.gd
