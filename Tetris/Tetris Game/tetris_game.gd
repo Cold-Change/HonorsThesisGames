@@ -177,7 +177,6 @@ func shiftTetrominoDown():
 			var last_row = [230,231,232,233,234,235,236,237,238,239]
 			if last_row.has(int(i)) and !tetromino_locked:
 				board.lockTetrominoToBoard(convertTetrominoToArray(),get_node("Tetromino").shape)
-				board.checkForGameOver()
 				createNewTetromino()
 				tetromino_can_move = false
 				tetromino_locked = true
@@ -187,7 +186,6 @@ func shiftTetrominoDown():
 			if !board.checkForOverlap(convertTetrominoToArray()):
 				get_node("Tetromino").position.y -= 32
 				board.lockTetrominoToBoard(convertTetrominoToArray(),get_node("Tetromino").shape)
-				board.checkForGameOver()
 				createNewTetromino()
 				return false
 	return true

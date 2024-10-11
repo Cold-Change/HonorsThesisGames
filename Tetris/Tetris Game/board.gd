@@ -14,9 +14,12 @@ func _ready():
 func lockTetrominoToBoard(tetromino_array,tetromino_type):
 	for i in tetromino_array:
 		if board_array[i]:
-			board_array[i-10] = tetromino_type
+			gameOver.emit()
 		else:
 			board_array[i] = tetromino_type
+	for i in range(40):
+		if board_array[i]:
+			gameOver.emit()
 	updateBoard()
 
 #Displays un-displayed squares, clears empty spaces
@@ -44,11 +47,6 @@ func checkForOverlap(tetromino_array):
 		if board_array[i]:
 			return false #There is overlap
 	return true #There is no overlap
-
-func checkForGameOver():
-	for i in range(40):
-		if board_array[i]:
-			gameOver.emit()
 
 func checkForFullRow():
 	for row in range(24):
