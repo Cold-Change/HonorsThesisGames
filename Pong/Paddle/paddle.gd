@@ -13,10 +13,12 @@ func _physics_process(_delta):
 	#Player 1 uses "WASD"
 	#Player 2 uses arrow keys
 	if player_num == 1:
+		Globals.paddle1_position = position
 		direction = Input.get_axis("up1","down1")
 		up_is_pressed = Input.is_action_pressed("up1")
 		down_is_pressed = Input.is_action_pressed("down1")
 	elif player_num == 2:
+		Globals.paddle2_position = position
 		direction = Input.get_axis("up2","down2")
 		up_is_pressed = Input.is_action_pressed("up2")
 		down_is_pressed = Input.is_action_pressed("down2")
@@ -30,19 +32,3 @@ func _physics_process(_delta):
 	else:
 		velocity.y = 0
 	move_and_slide()
-
-#Signal emitting functions
-#Used to affect angle of reflection of ball with paddle
-#Signal is used by the pong game scene which passes the call to 
-#a child ball scene
-func _on_down_2_body_entered(_body):
-	paddleZone.emit("Down2")
-
-func _on_down_1_body_entered(_body):
-	paddleZone.emit("Down1")
-
-func _on_up_1_body_entered(_body):
-	paddleZone.emit("Up1")
-
-func _on_up_2_body_entered(_body):
-	paddleZone.emit("Up2")

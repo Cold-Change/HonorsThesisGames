@@ -10,7 +10,7 @@ func _physics_process(_delta):
 
 #Regulates the movement of the ball scene
 func runMovementBehavior():
-	velocity = Vector2(speed[0],speed[1])
+	velocity = speed
 	
 	#Upon collision with a surface, run this behavior
 	if is_on_wall():
@@ -18,18 +18,14 @@ func runMovementBehavior():
 		
 		#If ball collides with paddle, run this behavior
 		if normal.x and $RefX.is_stopped():
-			speed[0] = -speed[0]
-			speed[0] *= 1.05
+			speed.x = -speed.x
+			speed.x *= 1.05
 			
-			#Based on paddle zone, increase or decrease vertical speed
-			if paddle_zone == "Up2":
-				speed[1] -= abs(speed[0]*0.5)
-			elif paddle_zone == "Up1":
-				speed[1] -= abs(speed[0]*0.25)
-			elif paddle_zone == "Down1":
-				speed[1] += abs(speed[0]*0.25)
-			elif paddle_zone == "Down2":
-				speed[1] += abs(speed[0]*0.5)
+			#Based on distance from paddle center, increase or decrease vertical speed
+			if position.x > 640:
+				speed.y = (position.y - Globals.paddle2_position.y)/50 * abs(speed.x)
+			else:
+				speed.y = (position.y - Globals.paddle1_position.y)/50 * abs(speed.x)
 			$RefX.start()
 		
 		#If ball collided with wall, run this behavior

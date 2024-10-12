@@ -13,11 +13,6 @@ var p1_score = 0
 var p2_score = 0
 var turn = 0
 
-func _ready():
-	#Connect signal paddleZone from paddle to function setPaddleStrength
-	$Paddle.paddleZone.connect(setPaddleStrength)
-	$Paddle2.paddleZone.connect(setPaddleStrength)
-
 func _physics_process(_delta):
 	#Simple state machine
 	#If in play, run checkPosition
@@ -57,9 +52,9 @@ func resetPlayArea():
 #Initializes ball movement
 func initBallMovement():
 	if turn % 2 == 0:
-		ball.speed = [ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
+		ball.speed = Vector2(ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed))
 	else:
-		ball.speed = [-ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed)]
+		ball.speed = Vector2(-ball.initSpeed,randi_range(-ball.initSpeed,ball.initSpeed))
 	turn += 1
 
 #Checks for winner and ends game if a winner is found
@@ -85,8 +80,4 @@ func restartGame():
 	p2_score_label.text = str(p2_score)
 	state = "start"
 	resetPlayArea()
-
-#Setter for ball, affects angle the ball bounces at when colliding with paddle
-func setPaddleStrength(zone):
-	ball.paddle_zone = zone
 	
