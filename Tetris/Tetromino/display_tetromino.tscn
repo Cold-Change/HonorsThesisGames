@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl7sjughseycu"]
+
+[sub_resource type="Gradient" id="Gradient_qo5ki"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.12549, 0.180392, 0.215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qgyae"]
+gradient = SubResource("Gradient_qo5ki")
+
+[node name="DisplayTetromino" type="Node2D"]
+z_index = 3
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -38.0
+offset_top = -38.0
+offset_right = 266.0
+offset_bottom = 266.0
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+texture = SubResource("GradientTexture1D_qgyae")

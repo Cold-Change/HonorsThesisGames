@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3xe4bti0auyr"]
+[gd_scene load_steps=7 format=3 uid="uid://b3xe4bti0auyr"]
 
 [ext_resource type="Script" path="res://Tetris Game/tetris_game.gd" id="1_g711u"]
 [ext_resource type="Texture2D" uid="uid://cfaq0pf1uywvs" path="res://Tetris Game/Board Graphics/Frame.png" id="2_2qnwp"]
 [ext_resource type="Texture2D" uid="uid://bytrp71wbamec" path="res://Tetris Game/Board Graphics/GridSquare.png" id="2_pfuws"]
 [ext_resource type="Script" path="res://Tetris Game/board.gd" id="4_vkfov"]
+[ext_resource type="PackedScene" uid="uid://bl7sjughseycu" path="res://Tetromino/display_tetromino.tscn" id="5_nm4vj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq5li"]
 
@@ -173,6 +174,9 @@ text = "High Score: 0"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Score: 0"
+
+[node name="DisplayTetromino" parent="." instance=ExtResource("5_nm4vj")]
+position = Vector2(160, -64)
 
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]

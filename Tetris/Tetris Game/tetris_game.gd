@@ -17,6 +17,8 @@ var board_height = 640
 
 @onready var cleanup = $Cleanup
 
+@onready var display_tetromino = $DisplayTetromino
+
 var tetromino = preload("res://Tetromino/tetromino.tscn")
 
 var score = 0
@@ -206,8 +208,21 @@ func createNewTetromino():
 	add_child(new_tetromino)
 	new_tetromino.name = "Tetromino"
 	new_tetromino.position = Vector2(board_width/2,32)
-	new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
+	if display_tetromino.has_node("DisplayTetromino"):
+		new_tetromino.initTetromino(display_tetromino.get_node("DisplayTetromino").shape)
+	else:
+		new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
+	addTetrominoToDisplay()
 	movement_timer.start()
+
+func addTetrominoToDisplay():
+	if display_tetromino.has_node("DisplayTetromino"):
+		get_node("DisplayTetromino").get_node("DisplayTetromino").free()
+	var new_tetromino = tetromino.instantiate()
+	display_tetromino.add_child(new_tetromino)
+	new_tetromino.name = "DisplayTetromino"
+	new_tetromino.scale = Vector2(.5,.5)
+	new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
 
 #Converts tetromino into an array of 4 integers corresponding to locations in the board array
 func convertTetrominoToArray():
