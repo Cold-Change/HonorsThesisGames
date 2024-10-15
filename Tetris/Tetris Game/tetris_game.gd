@@ -18,6 +18,7 @@ var board_height = 640
 @onready var cleanup = $Cleanup
 
 @onready var display_tetromino = $DisplayTetromino
+@onready var hold_tetromino = $HoldTetromino
 
 var tetromino = preload("res://Tetromino/tetromino.tscn")
 
@@ -36,6 +37,8 @@ func _physics_process(delta):
 		resetGame()
 	if state == "Running" and has_node("Tetromino"):
 		manageTetrominoMovement()
+		if Input.is_action_just_pressed("hold"):
+			addTetrominoToHold()
 		
 func startGame():
 	movement_timer.start()
@@ -199,7 +202,7 @@ func dropTetromino():
 		can_shift_down = shiftTetrominoDown()
 
 #Frees current tetromino and creates a new tetromino
-func createNewTetromino():
+func createNewTetromino(tetromino_type = ''):
 	if has_node("Tetromino"):
 		get_node("Tetromino").name = "OldTetromino"
 		get_node("OldTetromino").reparent(cleanup)
@@ -208,13 +211,17 @@ func createNewTetromino():
 	add_child(new_tetromino)
 	new_tetromino.name = "Tetromino"
 	new_tetromino.position = Vector2(board_width/2,32)
-	if display_tetromino.has_node("DisplayTetromino"):
+	if tetromino_type:
+		new_tetromino.initTetromino(tetromino_type)
+	elif display_tetromino.has_node("DisplayTetromino"):
 		new_tetromino.initTetromino(display_tetromino.get_node("DisplayTetromino").shape)
+		addTetrominoToDisplay()
 	else:
 		new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
-	addTetrominoToDisplay()
+		addTetrominoToDisplay()
 	movement_timer.start()
 
+#Frees current display tetromino and creates a new display tetromino
 func addTetrominoToDisplay():
 	if display_tetromino.has_node("DisplayTetromino"):
 		get_node("DisplayTetromino").get_node("DisplayTetromino").free()
@@ -223,6 +230,22 @@ func addTetrominoToDisplay():
 	new_tetromino.name = "DisplayTetromino"
 	new_tetromino.scale = Vector2(.5,.5)
 	new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
+
+#Frees current hold tetromino and creates a new hold tetromino
+func addTetrominoToHold():
+	var previously_held_tetromino = ''
+	if hold_tetromino.has_node("HoldTetromino"):
+		previously_held_tetromino = hold_tetromino.get_node("HoldTetromino").shape
+		get_node("HoldTetromino").get_node("HoldTetromino").free()
+	var new_tetromino = tetromino.instantiate()
+	hold_tetromino.add_child(new_tetromino)
+	new_tetromino.name = "HoldTetromino"
+	new_tetromino.scale = Vector2(.5,.5)
+	new_tetromino.initTetromino(get_node("Tetromino").shape)
+	if previously_held_tetromino:
+		createNewTetromino(previously_held_tetromino)
+	else:
+		createNewTetromino()
 
 #Converts tetromino into an array of 4 integers corresponding to locations in the board array
 func convertTetrominoToArray():

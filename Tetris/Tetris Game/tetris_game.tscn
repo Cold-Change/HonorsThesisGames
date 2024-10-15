@@ -178,5 +178,8 @@ text = "Score: 0"
 [node name="DisplayTetromino" parent="." instance=ExtResource("5_nm4vj")]
 position = Vector2(160, -64)
 
+[node name="HoldTetromino" parent="." instance=ExtResource("5_nm4vj")]
+position = Vector2(352, -128)
+
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
 [connection signal="timeout" from="CleanupTimer" to="." method="_on_cleanup_timer_timeout"]
