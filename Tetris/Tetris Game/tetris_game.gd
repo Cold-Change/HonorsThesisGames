@@ -10,6 +10,7 @@ extends Node2D
 @onready var running_ui = $Running
 @onready var hgih_score_label_2 = $Running/VBoxContainer/HgihScore
 @onready var score_label_2 = $Running/VBoxContainer/Score
+@onready var level_label = $Running/VBoxContainer/Level
 
 @onready var board = $Board
 var board_width = 320
@@ -20,9 +21,12 @@ var board_height = 640
 @onready var display_tetromino = $DisplayTetromino
 @onready var hold_tetromino = $HoldTetromino
 
+var can_hold_tetromino = true
+
 var tetromino = preload("res://Tetromino/tetromino.tscn")
 
 var score = 0
+var level = 1
 var state = "Start"
 
 func _ready():
@@ -37,10 +41,13 @@ func _physics_process(delta):
 		resetGame()
 	if state == "Running" and has_node("Tetromino"):
 		manageTetrominoMovement()
-		if Input.is_action_just_pressed("hold"):
+		if Input.is_action_just_pressed("hold") and can_hold_tetromino:
 			addTetrominoToHold()
 		
 func startGame():
+	movement_timer.wait_time = 1
+	level = 1
+	level_label.text = "Level: " + str(level)
 	movement_timer.start()
 	createNewTetromino()
 	state = "Running"
@@ -73,6 +80,16 @@ func increaseScore(amount):
 	if score > Globals.high_score:
 		Globals.high_score = score
 		hgih_score_label_2.text = "High Score: " + str(Globals.high_score)
+	if score / 1000 == level:
+		levelUp()
+
+func levelUp():
+	level += 1
+	if level <= 20:
+		movement_timer.wait_time = 1 - level * 0.05
+	else:
+		movement_timer.wait_time = 0.05
+	level_label.text = "Level: " + str(level)
 
 func checkPositionOnMove(direction):
 	for square in get_node("Tetromino").get_children():
@@ -220,6 +237,7 @@ func createNewTetromino(tetromino_type = ''):
 		new_tetromino.initTetromino(Globals.Tetromino.keys()[randi() % Globals.Tetromino.size()])
 		addTetrominoToDisplay()
 	movement_timer.start()
+	can_hold_tetromino = true
 
 #Frees current display tetromino and creates a new display tetromino
 func addTetrominoToDisplay():
@@ -242,10 +260,12 @@ func addTetrominoToHold():
 	new_tetromino.name = "HoldTetromino"
 	new_tetromino.scale = Vector2(.5,.5)
 	new_tetromino.initTetromino(get_node("Tetromino").shape)
+	get_node("Tetromino").free()
 	if previously_held_tetromino:
 		createNewTetromino(previously_held_tetromino)
 	else:
 		createNewTetromino()
+	can_hold_tetromino = false
 
 #Converts tetromino into an array of 4 integers corresponding to locations in the board array
 func convertTetrominoToArray():
