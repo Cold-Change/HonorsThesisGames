@@ -1,7 +1,9 @@
 extends Node2D
 
-@onready var movement_timer = $MovementTimer
-@onready var cleanup_timer = $CleanupTimer
+@onready var movement_timer = $Timers/MovementTimer
+@onready var cleanup_timer = $Timers/CleanupTimer
+@onready var slide_timer = $Timers/SlideTimer
+@onready var slide_buffer_timer = $Timers/SlideBufferTimer
 
 @onready var start_ui = $Start
 @onready var game_over_ui = $GameOver
@@ -180,13 +182,18 @@ func manageTetrominoMovement():
 		get_node("Tetromino").position.x += 32
 		if !board.checkForOverlap(convertTetrominoToArray()):
 			get_node("Tetromino").position.x -= 32
+		else:
+			slide_buffer_timer.start()
 	if Input.is_action_just_pressed("left") and checkPositionOnMove("left"):
 		get_node("Tetromino").position.x -= 32
 		if !board.checkForOverlap(convertTetrominoToArray()):
 			get_node("Tetromino").position.x += 32
+		else:
+			slide_buffer_timer.start()
 	if Input.is_action_just_pressed("down"):
 		shiftTetrominoDown()
 		movement_timer.start()
+		slide_buffer_timer.start()
 	if Input.is_action_just_pressed("drop"):
 		dropTetromino()
 
@@ -287,7 +294,6 @@ func convertTetrominoToArray():
 
 func initCleanup():
 	for child in cleanup.get_children():
-		child.visible = false
 		child.free()
 
 func _on_movement_timer_timeout():
@@ -295,3 +301,17 @@ func _on_movement_timer_timeout():
 
 func _on_cleanup_timer_timeout():
 	initCleanup()
+
+func _on_slide_timer_timeout():
+	if !slide_buffer_timer.time_left:
+		if Input.is_action_pressed("right") and checkPositionOnMove("right"):
+			get_node("Tetromino").position.x += 32
+			if !board.checkForOverlap(convertTetrominoToArray()):
+				get_node("Tetromino").position.x -= 32
+		if Input.is_action_pressed("left") and checkPositionOnMove("left"):
+			get_node("Tetromino").position.x -= 32
+			if !board.checkForOverlap(convertTetrominoToArray()):
+				get_node("Tetromino").position.x += 32
+		if Input.is_action_pressed("down"):
+			shiftTetrominoDown()
+			movement_timer.start()

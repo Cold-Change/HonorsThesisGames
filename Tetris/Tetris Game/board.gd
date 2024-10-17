@@ -44,7 +44,9 @@ func updateBoard():
 #Provided and array of array location, checks for overlap between the array and the board array
 func checkForOverlap(tetromino_array):
 	for i in tetromino_array:
-		if board_array[i]:
+		if i > 239:
+			return false #There is overflow through bottom of board
+		elif board_array[i]:
 			return false #There is overlap
 	return true #There is no overlap
 
