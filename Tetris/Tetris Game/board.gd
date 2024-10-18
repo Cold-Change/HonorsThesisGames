@@ -51,13 +51,23 @@ func checkForOverlap(tetromino_array):
 	return true #There is no overlap
 
 func checkForFullRow():
+	var rows_to_clear = 0
 	for row in range(24):
 		var row_is_full = true
 		for i in range(10):
 			if !board_array[row*10 + i]:
 				row_is_full = false
 		if row_is_full:
+			rows_to_clear += 1
 			clearRow(row)
+	if rows_to_clear >= 4:
+		increaseScore.emit(400 * Globals.level)
+	elif rows_to_clear >= 3:
+		increaseScore.emit(300 * Globals.level)
+	elif rows_to_clear >= 2:
+		increaseScore.emit(200 * Globals.level)
+	elif rows_to_clear >= 1:
+		increaseScore.emit(100 * Globals.level)
 
 func clearRow(row):
 	rowCleared.emit()
@@ -65,7 +75,6 @@ func clearRow(row):
 		for i in range(10):
 			board_array[row*10 + i] = board_array[row*10 + i - 10]
 		row -= 1
-	increaseScore.emit(100)
 	updateBoard()
 
 func clearBoard():

@@ -15,3 +15,4 @@ var cells = {
 }
 
 var high_score = 0
+var level = 1

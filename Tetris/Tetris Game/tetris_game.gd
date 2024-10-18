@@ -29,7 +29,6 @@ var can_hold_tetromino = true
 var tetromino = preload("res://Tetromino/tetromino.tscn")
 
 var score = 0
-var level = 1
 var state = "Start"
 
 func _ready():
@@ -53,8 +52,8 @@ func _physics_process(delta):
 		
 func startGame():
 	movement_timer.wait_time = 1
-	level = 1
-	level_label.text = "Level: " + str(level)
+	Globals.level = 1
+	level_label.text = "Level: " + str(Globals.level)
 	movement_timer.start()
 	createNewTetromino()
 	state = "Running"
@@ -83,6 +82,7 @@ func resetGame():
 	if hold_tetromino.has_node("HoldTetromino"):
 		hold_tetromino.get_node("HoldTetromino").queue_free()
 	score = 0
+	Globals.level = 1
 	game_over_ui.visible = false
 	start_ui.visible = true
 
@@ -92,16 +92,19 @@ func increaseScore(amount):
 	if score > Globals.high_score:
 		Globals.high_score = score
 		hgih_score_label_2.text = "High Score: " + str(Globals.high_score)
-	if score / 1000 == level:
+	if score / 1000 == Globals.level:
 		levelUp()
 
 func levelUp():
-	level += 1
-	if level <= 20:
-		movement_timer.wait_time = 1 - level * 0.05
+	Globals.level += 1
+	if Globals.level <= 11:
+		movement_timer.wait_time = 1 - Globals.level * 0.05
+	elif movement_timer.wait_time > 0.05:
+		movement_timer.wait_time = 1 - Globals.level * 0.05 - floor((Globals.level - 11)/2) * 0.05
 	else:
 		movement_timer.wait_time = 0.05
-	level_label.text = "Level: " + str(level)
+	level_label.text = "Level: " + str(Globals.level)
+	print(movement_timer.wait_time)
 
 func checkPositionOnMove(direction):
 	for square in get_node("Tetromino").get_children():
@@ -201,7 +204,8 @@ func manageTetrominoMovement():
 		else:
 			slide_buffer_timer.start()
 	if Input.is_action_just_pressed("down"):
-		shiftTetrominoDown()
+		if shiftTetrominoDown():
+			increaseScore(1)
 		movement_timer.start()
 		slide_buffer_timer.start()
 	if Input.is_action_just_pressed("drop"):
@@ -232,8 +236,12 @@ func shiftTetrominoDown():
 #Recurs shiftTetrominoDown() to bring the tetromino to its lowest possible position
 func dropTetromino():
 	var can_shift_down = true
+	var times_shifted = 0
 	while can_shift_down:
 		can_shift_down = shiftTetrominoDown()
+		if can_shift_down:
+			times_shifted += 2
+	increaseScore(times_shifted)
 
 #Frees current tetromino and creates a new tetromino
 func createNewTetromino(tetromino_type = ''):
@@ -325,5 +333,6 @@ func _on_slide_timer_timeout():
 			if !board.checkForOverlap(convertTetrominoToArray()):
 				get_node("Tetromino").position.x += 32
 		if Input.is_action_pressed("down"):
-			shiftTetrominoDown()
+			if shiftTetrominoDown():
+				increaseScore(1)
 			movement_timer.start()
