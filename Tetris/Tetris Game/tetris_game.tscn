@@ -9,6 +9,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fq5li"]
 
 [node name="TetrisGame" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_g711u")
 
 [node name="Timers" type="Node" parent="."]
@@ -96,6 +97,46 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Press \"ENTER\" to Begin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Paused" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -160.0
+offset_top = -256.0
+offset_right = 480.0
+offset_bottom = 1024.0
+
+[node name="Panel" type="Panel" parent="Paused"]
+modulate = Color(1, 1, 1, 0.733333)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 586.0
+offset_bottom = -586.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fq5li")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Paused/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Paused/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 

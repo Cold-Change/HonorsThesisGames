@@ -13,6 +13,7 @@ extends Node2D
 @onready var hgih_score_label_2 = $Running/VBoxContainer/HgihScore
 @onready var score_label_2 = $Running/VBoxContainer/Score
 @onready var level_label = $Running/VBoxContainer/Level
+@onready var paused_ui = $Paused
 
 @onready var board = $Board
 var board_width = 320
@@ -42,9 +43,13 @@ func _physics_process(delta):
 	if state == "GameOver" and Input.is_action_just_pressed("accept"):
 		resetGame()
 	if state == "Running" and has_node("Tetromino"):
-		manageTetrominoMovement()
-		if Input.is_action_just_pressed("hold") and can_hold_tetromino:
-			addTetrominoToHold()
+		if Input.is_action_just_pressed("pause"):
+			get_tree().paused = !get_tree().paused
+			paused_ui.visible = !paused_ui.visible
+		if !get_tree().paused:
+			manageTetrominoMovement()
+			if Input.is_action_just_pressed("hold") and can_hold_tetromino:
+				addTetrominoToHold()
 		
 func startGame():
 	movement_timer.wait_time = 1
@@ -302,13 +307,15 @@ func initCleanup():
 		child.free()
 
 func _on_movement_timer_timeout():
-	shiftTetrominoDown()
+	if !get_tree().paused:
+		shiftTetrominoDown()
 
 func _on_cleanup_timer_timeout():
-	initCleanup()
+	if !get_tree().paused:
+		initCleanup()
 
 func _on_slide_timer_timeout():
-	if !slide_buffer_timer.time_left:
+	if !slide_buffer_timer.time_left and !get_tree().paused:
 		if Input.is_action_pressed("right") and checkPositionOnMove("right"):
 			get_node("Tetromino").position.x += 32
 			if !board.checkForOverlap(convertTetrominoToArray()):
