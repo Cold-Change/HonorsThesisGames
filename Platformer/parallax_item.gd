@@ -11,8 +11,10 @@ extends Sprite2D
 
 @onready var parallax_position = [1,0,2]
 
-const SPEEDS = {"Fast3":.3,"Fast2":.2,"Fast1":.1,"Medium3":.08,"Medium2":.05,"Medium1":.03,"Slow3":.01,"Slow2":.005,"Slow1":.001}
-const MOBILE_SPEEDS = {"Fast":.3,"Medium":.2,"Slow":.1}
+#const SPEEDS = {"Fast3":.3,"Fast2":.2,"Fast1":.1,"Medium3":.08,"Medium2":.05,"Medium1":.03,"Slow3":.01,"Slow2":.005,"Slow1":.001}
+#const MOBILE_SPEEDS = {"Fast":.3,"Medium":.2,"Slow":.1}
+const SPEEDS = {"Fast3":.1,"Fast2":.2,"Fast1":.3,"Medium3":.4,"Medium2":.5,"Medium1":.6,"Slow3":.7,"Slow2":.8,"Slow1":.9}
+const MOBILE_SPEEDS = {"Fast":.1,"Medium":.2,"Slow":.3}
 
 func _ready():
 	#If the object is not static, create a duplicate image to the left and right
@@ -62,7 +64,7 @@ func checkParallax():
 
 #Moves parallax background according to change of player position from player initial position
 func applyParallax():
-	position.x = init_position.x + position_shift + (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
+	position.x = init_position.x + position_shift - (Globals.player_init_position.x - Globals.player_position.x) * SPEEDS[item_type]
 
 #Rotates the position of parallax item and duplicates according to the
 #rotation state and the direction of the shift

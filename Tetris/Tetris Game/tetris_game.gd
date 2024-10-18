@@ -71,7 +71,12 @@ func gameOver():
 func resetGame():
 	state = "Start"
 	board.clearBoard()
-	get_node("Tetromino").queue_free()
+	if has_node("Tetromino"):
+		get_node("Tetromino").queue_free()
+	if display_tetromino.has_node("DisplayTetromino"):
+		display_tetromino.get_node("DisplayTetromino").queue_free()
+	if hold_tetromino.has_node("HoldTetromino"):
+		hold_tetromino.get_node("HoldTetromino").queue_free()
 	score = 0
 	game_over_ui.visible = false
 	start_ui.visible = true
