@@ -3,8 +3,12 @@
 [ext_resource type="Script" path="res://player.gd" id="1_ukyh8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ywxc"]
+radius = 0.25
+height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1qb0k"]
+radius = 0.25
+height = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we1vy"]
 albedo_color = Color(0.8, 0.176471, 0.184314, 1)
@@ -20,4 +24,4 @@ mesh = SubResource("CapsuleMesh_1qb0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_we1vy")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.489, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624921, 2.5)

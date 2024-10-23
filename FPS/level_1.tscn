@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://player.tscn" id="1_kys0a"]
 [ext_resource type="Texture2D" uid="uid://dtu77axt2jdo4" path="res://WorldObjects/Textures/GrassTexture.png" id="1_l4f71"]
-[ext_resource type="PackedScene" uid="uid://8vpndw7e6gy6" path="res://WorldObjects/crab.glb" id="3_xwq16"]
+[ext_resource type="PackedScene" uid="uid://dlnwevwhu4wml" path="res://WorldObjects/Crab/crab.tscn" id="3_4ereg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ms57k"]
 size = Vector3(200, 1, 200)
@@ -33,5 +33,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294095, 2.83753, -4.30589)
 transform = Transform3D(0.897897, 5.2494e-09, 0.440206, -0.438599, 0.0853474, 0.894621, -0.0375704, -0.996351, 0.0766332, 62.3982, 154.604, -181.956)
 light_energy = 0.5
 
-[node name="crab" parent="." instance=ExtResource("3_xwq16")]
-transform = Transform3D(0.102103, 0, -0.2282, 0, 0.25, 0, 0.2282, 0, 0.102103, 2.7356, 0.178115, -9.76301)
+[node name="Crab" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(-0.283814, 0, -0.958879, 0, 1, 0, 0.958879, 0, -0.283814, 0.634885, 0.949267, -6.6733)
+
+[node name="Crab5" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(0.147119, 0, -0.989119, 0, 1, 0, 0.989119, 0, 0.147119, -0.605668, 0.949267, -6.6733)
+
+[node name="Crab6" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(0.574777, 0, -0.81831, 0, 1, 0, 0.81831, 0, 0.574777, -1.70971, 0.949267, -6.43386)
+
+[node name="Crab7" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(0.961276, 0, -0.275587, 0, 1, 0, 0.275587, 0, 0.961276, -2.08203, 0.949267, -4.62662)
+
+[node name="Crab2" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(-0.997844, 0, -0.0656296, 0, 1, 0, 0.0656296, 0, -0.997844, 2.61927, 0.949267, -5.0316)
+
+[node name="Crab3" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(-0.69203, 0, -0.721869, 0, 1, 0, 0.721869, 0, -0.69203, 1.86351, 0.949267, -6.22966)
+
+[node name="Crab4" parent="." instance=ExtResource("3_4ereg")]
+transform = Transform3D(-0.516294, 0, 0.856411, 0, 1, 0, -0.856411, 0, -0.516294, 1.86351, 0.949267, -3.66985)

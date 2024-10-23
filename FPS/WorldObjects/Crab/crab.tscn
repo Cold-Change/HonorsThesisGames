@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlnwevwhu4wml"]
+
+[ext_resource type="PackedScene" uid="uid://8vpndw7e6gy6" path="res://WorldObjects/Crab/crab.glb" id="1_oq6u1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yj24u"]
+radius = 0.449621
+
+[node name="Crab" type="RigidBody3D"]
+
+[node name="Crab Model" parent="." instance=ExtResource("1_oq6u1")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.655244, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924764, 0, 0)
+shape = SubResource("SphereShape3D_yj24u")
