@@ -23,7 +23,5 @@ shape = SubResource("CapsuleShape3D_3ywxc")
 mesh = SubResource("CapsuleMesh_1qb0k")
 surface_material_override/0 = SubResource("StandardMaterial3D_we1vy")
 
-[node name="CameraOrigin" type="Node3D" parent="."]
-
-[node name="PlayerCamera" type="Camera3D" parent="CameraOrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624921, 1.88428)
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624921, 2.5)

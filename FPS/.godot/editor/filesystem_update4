@@ -1,4 +1,6 @@
-res://level_1.tscn
 res://player.tscn
+res://player.gd
+res://player_camera.gd
+res://level_1.tscn
 res://WorldObjects/floor.tscn
 res://WorldObjects/Crab/crab.tscn
