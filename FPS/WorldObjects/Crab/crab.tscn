@@ -6,10 +6,11 @@
 radius = 0.449621
 
 [node name="Crab" type="RigidBody3D"]
+gravity_scale = 0.0
 
 [node name="CrabModel" parent="." instance=ExtResource("1_ufv8r")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.649884, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924764, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924764, 0.125647, 0)
 shape = SubResource("SphereShape3D_yj24u")

@@ -1,31 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd7na6lkx0wm5"]
+[gd_scene load_steps=5 format=3 uid="uid://bd7na6lkx0wm5"]
 
-[ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://player.tscn" id="1_kys0a"]
-[ext_resource type="Texture2D" uid="uid://dtu77axt2jdo4" path="res://WorldObjects/Textures/GrassTexture.png" id="1_l4f71"]
+[ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="1_kys0a"]
 [ext_resource type="PackedScene" uid="uid://dlnwevwhu4wml" path="res://WorldObjects/Crab/crab.tscn" id="3_4ereg"]
+[ext_resource type="PackedScene" uid="uid://60cdyebmg7cd" path="res://WorldObjects/Island/island.tscn" id="4_6po6y"]
 [ext_resource type="PackedScene" uid="uid://b2lhk8e0xhfmq" path="res://WorldObjects/Succulent/succulent.tscn" id="4_rea30"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ms57k"]
-size = Vector3(200, 1, 200)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh0yo"]
-albedo_texture = ExtResource("1_l4f71")
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_rt8dw"]
-material = SubResource("StandardMaterial3D_bh0yo")
-size = Vector3(200, 1, 200)
 
 [node name="Level 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103672, 1.17845, -0.18977)
-
-[node name="Floor" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("BoxShape3D_ms57k")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("BoxMesh_rt8dw")
 
 [node name="Player" parent="." instance=ExtResource("1_kys0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294095, 1.14006, -0.917205)
@@ -37,25 +18,25 @@ light_energy = 0.5
 [node name="Crabs" type="Node" parent="."]
 
 [node name="Crab" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(-0.283814, 0, -0.958879, 0, 1, 0, 0.958879, 0, -0.283814, 0.531213, 2.12772, -6.86307)
+transform = Transform3D(-0.283814, 0, -0.958879, 0, 1, 0, 0.958879, 0, -0.283814, 0.531213, 2.10725, -6.86307)
 
 [node name="Crab5" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(0.147119, 0, -0.989119, 0, 1, 0, 0.989119, 0, 0.147119, -0.70934, 2.12772, -6.86307)
+transform = Transform3D(0.147119, 0, -0.989119, 0, 1, 0, 0.989119, 0, 0.147119, -0.70934, 2.10725, -6.86307)
 
 [node name="Crab6" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(0.574777, 0, -0.81831, 0, 1, 0, 0.81831, 0, 0.574777, -1.81338, 2.12772, -6.62363)
+transform = Transform3D(0.574777, 0, -0.81831, 0, 1, 0, 0.81831, 0, 0.574777, -1.81338, 2.10725, -6.62363)
 
 [node name="Crab7" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(0.961276, 0, -0.275587, 0, 1, 0, 0.275587, 0, 0.961276, -2.1857, 2.12772, -4.81639)
+transform = Transform3D(0.961276, 0, -0.275587, 0, 1, 0, 0.275587, 0, 0.961276, -2.1857, 2.10725, -4.81639)
 
 [node name="Crab2" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(-0.997844, 0, -0.0656296, 0, 1, 0, 0.0656296, 0, -0.997844, 2.5156, 2.12772, -5.22137)
+transform = Transform3D(-0.997844, 0, -0.0656296, 0, 1, 0, 0.0656296, 0, -0.997844, 2.5156, 2.10725, -5.22137)
 
 [node name="Crab3" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(-0.69203, 0, -0.721869, 0, 1, 0, 0.721869, 0, -0.69203, 1.75984, 2.12772, -6.41943)
+transform = Transform3D(-0.69203, 0, -0.721869, 0, 1, 0, 0.721869, 0, -0.69203, 1.75984, 2.10725, -6.41943)
 
 [node name="Crab4" parent="Crabs" instance=ExtResource("3_4ereg")]
-transform = Transform3D(-0.516294, 0, 0.856411, 0, 1, 0, -0.856411, 0, -0.516294, 1.75984, 2.12772, -3.85962)
+transform = Transform3D(-0.516294, 0, 0.856411, 0, 1, 0, -0.856411, 0, -0.516294, 1.75984, 2.10725, -3.85962)
 
 [node name="Plants" type="Node" parent="."]
 
@@ -76,3 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51666, 1.95441, -0.367125)
 
 [node name="Succulent6" parent="Plants" instance=ExtResource("4_rea30")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51666, 1.95441, -2.69515)
+
+[node name="IslandModel" parent="." instance=ExtResource("4_6po6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -26.367, 0)

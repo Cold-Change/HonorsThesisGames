@@ -372,7 +372,7 @@ mesh = SubResource("ArrayMesh_axrrw")
 skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.5089e-05, -0.10058, 0.111278, 0.147355, -0.0450832, -0.108291, 0.129604, 0.0512461, 0.123136, 0.526197, 3.45521, 0.716717)
+transform = Transform3D(0.120842, 0.0519463, -0.13118, -0.10271, 0.103302, 0.0122438, 0.115579, 0.0374879, 0.148034, 0.600724, 2.86645, 0.716206)
 mesh = SubResource("ArrayMesh_p8pw5")
 skeleton = NodePath("")
 

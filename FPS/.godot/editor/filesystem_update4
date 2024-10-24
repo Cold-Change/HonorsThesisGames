@@ -1,9 +1,11 @@
+res://WorldObjects/Island/island_model.tscn
 res://level_1.tscn
-res://player.tscn
+res://Player/player.tscn
 res://WorldObjects/floor.tscn
 res://WorldObjects/Crab/crab.tscn
-res://player.gd
 res://WorldObjects/Crab/crab_model.tscn
-res://WorldObjects/Crab/succulent_model.tscn
 res://WorldObjects/Succulent/succulent.tscn
 res://WorldObjects/Succulent/succulent_model.tscn
+res://Player/player_model.tscn
+res://WorldObjects/Island/island.tscn
+res://Player/player.gd
