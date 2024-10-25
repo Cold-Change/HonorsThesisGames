@@ -41,12 +41,12 @@ func _physics_process(delta):
 			camera_mode = "front"
 		elif camera_mode == "front":
 			camera_origin.rotation.y -= PI
-			camera.position += Vector3(0,.6,-2.1)
-			camera_origin.position.y += 1.3
+			camera.position.z -= 2.1
+			camera_origin.position.y += 0.8
 			camera_mode = "first"
 		elif camera_mode == "first":
-			camera.position -= Vector3(0,.6,-2.1)
-			camera_origin.position.y -= 1.3
+			camera.position.z += 2.1
+			camera_origin.position.y -= 0.8
 			camera_mode = "third"
 	
 	move_and_slide()

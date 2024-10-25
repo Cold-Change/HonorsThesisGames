@@ -1,6 +1,6 @@
+Node
 MeshInstance3D
 StaticBody3D
-Node
 CollisionShape3D
 RigidBody3D
 Node3D
