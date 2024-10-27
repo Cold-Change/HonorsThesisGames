@@ -3,4 +3,3 @@ res://Player/player.tscn
 res://Player/player_model.tscn
 res://WorldObjects/Crab/crab.tscn
 res://WorldObjects/Island/island.tscn
-res://Player/player.gd
