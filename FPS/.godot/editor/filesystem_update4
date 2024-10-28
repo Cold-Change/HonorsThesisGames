@@ -1,5 +1,5 @@
-res://level_1.tscn
 res://Player/player.tscn
-res://Player/player_model.tscn
+res://level_1.tscn
 res://WorldObjects/Crab/crab.tscn
 res://WorldObjects/Island/island.tscn
+res://Player/player_model.tscn

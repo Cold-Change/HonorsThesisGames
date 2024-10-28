@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6vt8jgvgd7h2"]
+
+[ext_resource type="PackedScene" uid="uid://bx5ib4b5i0ks3" path="res://Player/Player.glb" id="1_vsgxa"]
+
+[node name="PlayerModel2" instance=ExtResource("1_vsgxa")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/6/rotation = Quaternion(0.136646, -0.486202, -0.678057, 0.534017)
+bones/7/rotation = Quaternion(-2.33032e-08, 1.22386e-08, -0.30961, 0.950864)
+bones/8/rotation = Quaternion(0.018968, 0.215759, 0.0777908, 0.973158)
+bones/10/rotation = Quaternion(0.0431923, 0.500584, 0.578702, 0.642382)
+bones/11/rotation = Quaternion(4.981e-08, 5.59982e-08, 0.400585, 0.91626)
+bones/12/rotation = Quaternion(0.0339867, -0.106891, -0.157078, 0.981196)
+bones/13/position = Vector3(-0.271852, 0.4897, 1.40437)
+bones/14/position = Vector3(-0.0903631, 0.502409, 1.40437)
+bones/15/rotation = Quaternion(0.746698, 0.10999, 0.655563, -0.0241418)
+bones/17/rotation = Quaternion(0.746697, -0.10999, -0.655563, -0.0241418)

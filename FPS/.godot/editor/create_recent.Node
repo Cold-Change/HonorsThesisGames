@@ -1,8 +1,8 @@
+RigidBody3D
 Node
 MeshInstance3D
 StaticBody3D
 CollisionShape3D
-RigidBody3D
 Node3D
 DirectionalLight3D
 Camera3D
