@@ -1,5 +1,6 @@
 res://Player/player.tscn
+res://Player/player.gd
 res://level_1.tscn
-res://WorldObjects/Crab/crab.tscn
-res://WorldObjects/Island/island.tscn
+res://Player/Gun/gun.tscn
 res://Player/player_model.tscn
+res://Player/player_model.gd

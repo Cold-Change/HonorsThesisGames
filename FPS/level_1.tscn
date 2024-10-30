@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd7na6lkx0wm5"]
+[gd_scene load_steps=7 format=3 uid="uid://bd7na6lkx0wm5"]
 
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="1_kys0a"]
 [ext_resource type="PackedScene" uid="uid://dlnwevwhu4wml" path="res://WorldObjects/Crab/crab.tscn" id="3_4ereg"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b2lhk8e0xhfmq" path="res://WorldObjects/Succulent/succulent.tscn" id="4_rea30"]
 [ext_resource type="PackedScene" uid="uid://c3fh4xbj7eio5" path="res://WorldObjects/Trees/tree_green.tscn" id="5_iwmaa"]
 [ext_resource type="PackedScene" uid="uid://gupayeavb0la" path="res://WorldObjects/Trees/tree_orange.tscn" id="6_1pqvr"]
-[ext_resource type="PackedScene" uid="uid://ckvpiusy1o5ur" path="res://Player/player_model.tscn" id="7_ebuuv"]
 
 [node name="Level 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103672, 1.17845, -0.18977)
@@ -104,6 +103,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, -3, -20)
 
 [node name="tree_orange6" parent="Trees" instance=ExtResource("6_1pqvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5024, 0.600563, 14.0569)
-
-[node name="PlayerModel" parent="." instance=ExtResource("7_ebuuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226568, 0.26069, -8.26468)
