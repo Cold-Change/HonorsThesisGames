@@ -1,6 +1,6 @@
 extends Node3D
 
-var speed = 20
+var speed = 40
 var damage = 20
 
 @onready var clear_timer = $ClearTimer
@@ -16,5 +16,5 @@ func _on_clear_timer_timeout():
 
 func _on_hit_box_body_entered(body):
 	if body.has_method("takeDamage"):
-		body.takeDamage()
+		body.takeDamage(damage)
 	destroyBullet()

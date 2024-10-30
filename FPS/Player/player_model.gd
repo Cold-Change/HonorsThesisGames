@@ -30,13 +30,13 @@ func getChestRot():
 	return skeleton_3d.get_bone_pose_rotation(chest)
 
 func getSpineRot():
-	return skeleton_3d.get_bone_pose_rotation(chest)
+	return skeleton_3d.get_bone_pose_rotation(spine)
 
 func updateHeadRot(amount):
 	skeleton_3d.set_bone_pose_rotation(head,Quaternion(getHeadRot().x + amount,getHeadRot().y,getHeadRot().z,getHeadRot().w))
 
 func updateChestRot(amount):
-	skeleton_3d.set_bone_pose_rotation(chest,Quaternion(clamp(getChestRot().x + amount, deg_to_rad(-25), deg_to_rad(25)),getChestRot().y,getChestRot().z,getChestRot().w))
+	skeleton_3d.set_bone_pose_rotation(chest,Quaternion(clamp(getChestRot().x + amount, deg_to_rad(-20), deg_to_rad(20)),getChestRot().y,getChestRot().z,getChestRot().w))
 
 func updateSpineRot(amount):
-	skeleton_3d.set_bone_pose_rotation(spine,Quaternion(getSpineRot().x + amount,getSpineRot().y,getSpineRot().z,getSpineRot().w))
+	skeleton_3d.set_bone_pose_rotation(spine,Quaternion(clamp(getSpineRot().x + amount, deg_to_rad(-20), deg_to_rad(20)),getSpineRot().y,getSpineRot().z,getSpineRot().w))

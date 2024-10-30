@@ -70,6 +70,18 @@ aim={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_2="PlayerHitBox"
+3d_physics/layer_3="PlayerHurtBox1"
+3d_physics/layer_4="PlayerHurtBox2"
+3d_physics/layer_5="PlayerHurtBox3"
+
+[physics]
+
+common/physics_ticks_per_second=160
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.250475, 0.576944, 0.765946, 1)

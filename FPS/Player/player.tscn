@@ -8,6 +8,7 @@ radius = 0.25
 height = 2.36996
 
 [node name="Player" type="CharacterBody3D"]
+floor_snap_length = 0.15
 script = ExtResource("1_ukyh8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

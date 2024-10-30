@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd7na6lkx0wm5"]
+[gd_scene load_steps=8 format=3 uid="uid://bd7na6lkx0wm5"]
 
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="1_kys0a"]
 [ext_resource type="PackedScene" uid="uid://dlnwevwhu4wml" path="res://WorldObjects/Crab/crab.tscn" id="3_4ereg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2lhk8e0xhfmq" path="res://WorldObjects/Succulent/succulent.tscn" id="4_rea30"]
 [ext_resource type="PackedScene" uid="uid://c3fh4xbj7eio5" path="res://WorldObjects/Trees/tree_green.tscn" id="5_iwmaa"]
 [ext_resource type="PackedScene" uid="uid://gupayeavb0la" path="res://WorldObjects/Trees/tree_orange.tscn" id="6_1pqvr"]
+[ext_resource type="PackedScene" uid="uid://bojux1muuloxn" path="res://UI/player_ui.tscn" id="7_fj83k"]
 
 [node name="Level 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103672, 1.17845, -0.18977)
@@ -18,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294095, 1.14006, -0.917205
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.897897, 5.2494e-09, 0.440206, -0.438599, 0.0853474, 0.894621, -0.0375704, -0.996351, 0.0766332, 62.3982, 154.604, -181.956)
-light_energy = 0.5
+light_color = Color(1, 1, 0.729412, 1)
 
 [node name="Crabs" type="Node" parent="."]
 
@@ -103,3 +104,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, -3, -20)
 
 [node name="tree_orange6" parent="Trees" instance=ExtResource("6_1pqvr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5024, 0.600563, 14.0569)
+
+[node name="tree_orange7" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.549, -8.33071, -79.9015)
+
+[node name="tree_orange8" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.738, -2.44141, -40.6209)
+
+[node name="tree_orange9" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8047, -8.12989, -76.4592)
+
+[node name="tree_orange10" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5736, -3.51644, 22.9965)
+
+[node name="tree_orange11" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3668, -6.24929, 21.6108)
+
+[node name="tree_orange12" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0354, -6.67503, 54.1768)
+
+[node name="tree_orange13" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.4721, -4.25735, 45.5979)
+
+[node name="tree_orange14" parent="Trees" instance=ExtResource("6_1pqvr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.3708, -5.32949, -0.910374)
+
+[node name="tree_green8" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5883, -7.04985, -63.7801)
+
+[node name="tree_green9" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.7008, -7.71065, -60.0675)
+
+[node name="tree_green10" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9575, -1.81263, -38.9362)
+
+[node name="tree_green11" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3645, -0.559479, -11.4978)
+
+[node name="tree_green12" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.761, -6.01002, -37.4277)
+
+[node name="tree_green13" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8874, -8.56886, -88.0661)
+
+[node name="tree_green14" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7247, -13.5582, -95.3861)
+
+[node name="tree_green15" parent="Trees" instance=ExtResource("5_iwmaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6052, -3.01993, -67.4181)
+
+[node name="PlayerUI" parent="." instance=ExtResource("7_fj83k")]
+mouse_filter = 2

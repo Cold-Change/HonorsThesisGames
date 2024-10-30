@@ -46,7 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_42rxv")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kmfj0"]
 
 [node name="Bullet" type="Node3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_miat7")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
@@ -55,10 +55,12 @@ mesh = SubResource("ArrayMesh_kxtym")
 skeleton = NodePath("")
 
 [node name="ClearTimer" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
 autostart = true
 
 [node name="HitBox" type="Area3D" parent="."]
+collision_mask = 29
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 transform = Transform3D(0.18545, 0, 0, 0, -8.10628e-09, -0.18545, 0, 0.18545, -8.10628e-09, 0, 0, 0)
