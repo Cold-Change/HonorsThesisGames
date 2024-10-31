@@ -10,12 +10,14 @@ var main
 var head
 var chest
 var spine
+var hip
 
 func _ready():
 	main = skeleton_3d.find_bone("Main")
 	head = skeleton_3d.find_bone("Head")
 	chest = skeleton_3d.find_bone("Chest")
 	spine = skeleton_3d.find_bone("Spine")
+	hip = skeleton_3d.find_bone("Hip")
 
 func getHeadPos():
 	return skeleton_3d.get_bone_pose_position(head)

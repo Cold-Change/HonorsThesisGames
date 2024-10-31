@@ -1,12 +1,30 @@
-[gd_scene format=3 uid="uid://bojux1muuloxn"]
+[gd_scene load_steps=7 format=3 uid="uid://bojux1muuloxn"]
+
+[ext_resource type="Texture2D" uid="uid://bn3s5wjvydpih" path="res://UI/UI Graphics/ProgressBarBorder.png" id="1_3vtsv"]
+[ext_resource type="Script" path="res://UI/player_ui.gd" id="1_nsoaf"]
+
+[sub_resource type="Gradient" id="Gradient_6sm5s"]
+colors = PackedColorArray(0.133333, 0.133333, 0.133333, 1, 0.2, 0.2, 0.2, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xo8nb"]
+gradient = SubResource("Gradient_6sm5s")
+
+[sub_resource type="Gradient" id="Gradient_t8473"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.117647, 0.45098, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4dka8"]
+gradient = SubResource("Gradient_t8473")
 
 [node name="PlayerUI" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nsoaf")
 
 [node name="Crosshair" type="Label" parent="."]
 layout_mode = 1
@@ -24,3 +42,24 @@ theme_override_font_sizes/font_size = 36
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 340.0
+offset_bottom = -16.0
+grow_vertical = 0
+value = 83.0
+rounded = true
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_xo8nb")
+texture_progress = SubResource("GradientTexture1D_4dka8")
+
+[node name="ProgressBarBorder" type="Sprite2D" parent="HealthBar"]
+texture_filter = 1
+position = Vector2(160, 12)
+texture = ExtResource("1_3vtsv")

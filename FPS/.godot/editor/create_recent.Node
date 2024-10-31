@@ -1,3 +1,7 @@
+PhysicalBone3D
+RemoteTransform3D
+ProgressBar
+TextureProgressBar
 BoneAttachment3D
 RigidBody3D
 StaticBody3D
@@ -8,7 +12,3 @@ MeshInstance3D
 CPUParticles3D
 Camera3D
 AnimationTree
-Node3D
-Area3D
-RayCast3D
-Timer

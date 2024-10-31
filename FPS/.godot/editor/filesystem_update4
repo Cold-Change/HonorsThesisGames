@@ -1,9 +1,13 @@
-res://Player/player_model.tscn
 res://level_1.tscn
 res://Player/Gun/gun.tscn
 res://Player/player.tscn
+res://Player/player_model.tscn
 res://Player/Gun/bullet.tscn
 res://UI/player_ui.tscn
-res://Player/player_model.gd
 res://Player/player.gd
+res://UI/player_ui.gd
 res://Player/Gun/bullet.gd
+res://Player/player_model.gd
+res://Player/player_model2.tscn
+res://Player/player_model_test.tscn
+res://Player/Gun/gun.gd

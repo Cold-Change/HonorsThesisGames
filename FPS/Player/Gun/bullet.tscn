@@ -44,13 +44,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_42rxv")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kmfj0"]
+radius = 0.224919
+height = 0.835317
 
 [node name="Bullet" type="Node3D"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_miat7")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.103389, 0, 0, 0, 0.103389, 0, 0, 0, 0.103389, 0, 0, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_kxtym")
 skeleton = NodePath("")
 
@@ -63,7 +65,7 @@ autostart = true
 collision_mask = 29
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
-transform = Transform3D(0.18545, 0, 0, 0, -8.10628e-09, -0.18545, 0, 0.18545, -8.10628e-09, 0, 0, 0)
+transform = Transform3D(0.18545, 0, 0, 0, -8.10628e-09, -0.18545, 0, 0.18545, -8.10628e-09, 0, 0, -0.00722358)
 shape = SubResource("CapsuleShape3D_kmfj0")
 
 [connection signal="timeout" from="ClearTimer" to="." method="_on_clear_timer_timeout"]

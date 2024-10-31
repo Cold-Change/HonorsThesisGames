@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnl5lsnwdas3i"]
+[gd_scene load_steps=5 format=3 uid="uid://bnl5lsnwdas3i"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ukyh8"]
 [ext_resource type="PackedScene" uid="uid://bxmhf47j765pw" path="res://Player/player_model.tscn" id="2_c0vva"]
+[ext_resource type="PackedScene" uid="uid://bojux1muuloxn" path="res://UI/player_ui.tscn" id="3_fobn8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ywxc"]
 radius = 0.25
 height = 2.36996
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
 floor_snap_length = 0.15
 script = ExtResource("1_ukyh8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="HitBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18458, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_3ywxc")
 
 [node name="PlayerModel" parent="." instance=ExtResource("2_c0vva")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="PlayerUI" parent="." instance=ExtResource("3_fobn8")]

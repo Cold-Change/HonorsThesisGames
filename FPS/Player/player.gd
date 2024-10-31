@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @onready var player_model = $PlayerModel
+@onready var player_ui = $PlayerUI
+var player_num = 1
 
 var speed = 6.0
 var jump = 4.5
@@ -16,6 +18,10 @@ var camera_mode = "first"
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	player_ui.updateHealthBar(health)
+	if has_node("PlayerModel/Armature/Skeleton3D/HandRAttatchment/Gun"):
+		get_node("PlayerModel/Armature/Skeleton3D/HandRAttatchment/Gun").emitPlayerDamage.connect(takeDamage)
+	#takeDamage.connect(preload("res://Player/Gun/bullet.gd").playerTakeDamage)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -54,5 +60,7 @@ func _unhandled_input(event):
 		player_model.updateChestRot(deg_to_rad(-change_v)*1/2)
 		player_model.updateSpineRot(deg_to_rad(-change_v)*1/2)
 
-func takeDamage(damage):
-	health -= damage
+func takeDamage(player,damage):
+	if player_num == player:
+		health -= damage
+		player_ui.updateHealthBar(health)
