@@ -1,25 +1,24 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1730337767
+::res://::1730389134
 icon.svg::CompressedTexture2D::6284250477132731339::1729555809::1729727549::1::::<><>::
-level_1.tscn::PackedScene::2663838269345876550::1730337767::0::1::::<><>::uid://bnl5lsnwdas3i::::res://Player/player.tscn<>uid://dlnwevwhu4wml::::res://WorldObjects/Crab/crab.tscn<>uid://60cdyebmg7cd::::res://WorldObjects/Island/island.tscn<>uid://b2lhk8e0xhfmq::::res://WorldObjects/Succulent/succulent.tscn<>uid://c3fh4xbj7eio5::::res://WorldObjects/Trees/tree_green.tscn<>uid://gupayeavb0la::::res://WorldObjects/Trees/tree_orange.tscn
+level_1.tscn::PackedScene::2663838269345876550::1730389134::0::1::::<><>::uid://bnl5lsnwdas3i::::res://Player/player.tscn<>uid://dlnwevwhu4wml::::res://WorldObjects/Crab/crab.tscn<>uid://60cdyebmg7cd::::res://WorldObjects/Island/island.tscn<>uid://b2lhk8e0xhfmq::::res://WorldObjects/Succulent/succulent.tscn<>uid://c3fh4xbj7eio5::::res://WorldObjects/Trees/tree_green.tscn<>uid://gupayeavb0la::::res://WorldObjects/Trees/tree_orange.tscn
 ::res://CPU/::1730336082
-::res://Player/::1730337984
-player.gd::GDScript::-1::1730336769::0::1::::<>CharacterBody3D<>::
-Player.glb::PackedScene::4063184467822382576::1730327183::1730327184::1::::<><>::
-player.tscn::PackedScene::3323425926304497464::1730337767::0::1::::<><>::res://Player/player.gd<>uid://bxmhf47j765pw::::res://Player/player_model.tscn<>uid://bojux1muuloxn::::res://UI/player_ui.tscn
-player_model.gd::GDScript::-1::1730336295::0::1::::<>Node3D<>::
-player_model.tscn::PackedScene::4025972141399283620::1730337767::0::1::::<><>::res://Player/player_model.gd<>uid://5n0l6n0aysq3::::res://Player/Gun/gun.tscn
-player_model_test.tscn::PackedScene::7822961911530633871::1730338002::0::1::::<><>::res://Player/player_model.gd<>uid://5n0l6n0aysq3::::res://Player/Gun/gun.tscn
-::res://Player/Gun/::1730337767
-bullet.gd::GDScript::-1::1730336477::0::1::::<>Node3D<>::
+::res://Player/::1730390785
+player.gd::GDScript::-1::1730344495::0::1::::<>CharacterBody3D<>::
+Player.glb::PackedScene::4063184467822382576::1730390785::1730390786::1::::<><>::
+player.tscn::PackedScene::3323425926304497464::1730389134::0::1::::<><>::res://Player/player.gd<>uid://bxmhf47j765pw::::res://Player/player_model.tscn<>uid://bojux1muuloxn::::res://UI/player_ui.tscn
+player_model.gd::GDScript::-1::1730340688::0::1::::<>Node3D<>::
+player_model.tscn::PackedScene::4025972141399283620::1730389555::0::1::::<><>::res://Player/player_model.gd<>uid://5n0l6n0aysq3::::res://Player/Gun/gun.tscn
+::res://Player/Gun/::1730389135
+bullet.gd::GDScript::-1::1730344473::0::1::::<>Node3D<>::
 Bullet.glb::PackedScene::5565031500523261057::1730158458::1730158459::1::::<><>::
-bullet.tscn::PackedScene::2083136831446403306::1730337767::0::1::::<><>::res://Player/Gun/bullet.gd
-gun.gd::GDScript::-1::1730171094::0::1::::<>Node3D<>::
+bullet.tscn::PackedScene::2083136831446403306::1730389135::0::1::::<><>::res://Player/Gun/bullet.gd
+gun.gd::GDScript::-1::1730344039::0::1::::<>Node3D<>::
 Gun.glb::PackedScene::5285717930822546807::1730158622::1730158623::1::::<><>::
-gun.tscn::PackedScene::2134041437939026212::1730337767::0::1::::<><>::res://Player/Gun/gun.gd
-::res://UI/::1730337767
-player_ui.gd::GDScript::-1::1730335640::0::1::::<>Control<>::
-player_ui.tscn::PackedScene::3388900692607875563::1730337767::0::1::::<><>::uid://bn3s5wjvydpih::::res://UI/UI Graphics/ProgressBarBorder.png<>res://UI/player_ui.gd
+gun.tscn::PackedScene::2134041437939026212::1730389134::0::1::::<><>::res://Player/Gun/gun.gd
+::res://UI/::1730389135
+player_ui.gd::GDScript::-1::1730343320::0::1::::<>Control<>::
+player_ui.tscn::PackedScene::3388900692607875563::1730389135::0::1::::<><>::uid://bn3s5wjvydpih::::res://UI/UI Graphics/ProgressBarBorder.png<>res://UI/player_ui.gd
 ::res://UI/UI Graphics/::1730335519
 ProgressBarBorder.png::CompressedTexture2D::3357825878191433419::1730335519::1730335519::1::::<><>::
 ::res://WorldObjects/::1730171733

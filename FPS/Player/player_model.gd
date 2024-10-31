@@ -6,6 +6,8 @@ extends Node3D
 @onready var first_person_camera = $Armature/Skeleton3D/HeadAttatchment/FirstPersonCamera
 @onready var third_person_camera = $Armature/Skeleton3D/MainAttatchment/ThirdPersonCamera
 
+@onready var animation_tree = $AnimationTree
+
 var main
 var head
 var chest
@@ -13,11 +15,21 @@ var spine
 var hip
 
 func _ready():
+	animation_tree.set("parameters/conditions/RaiseGun", true)
 	main = skeleton_3d.find_bone("Main")
 	head = skeleton_3d.find_bone("Head")
 	chest = skeleton_3d.find_bone("Chest")
 	spine = skeleton_3d.find_bone("Spine")
 	hip = skeleton_3d.find_bone("Hip")
+
+func _process(delta):
+	# Get the input direction and handle the corresponding animations.
+	var input_dir = Input.get_vector("left", "right", "forward", "back")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		animation_tree.set("parameters/conditions/WalkGun", true)
+	else:
+		animation_tree.set("parameters/conditions/WalkGun", false)
 
 func getHeadPos():
 	return skeleton_3d.get_bone_pose_position(head)

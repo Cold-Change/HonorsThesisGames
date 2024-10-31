@@ -1,3 +1,4 @@
+AnimationTree
 PhysicalBone3D
 RemoteTransform3D
 ProgressBar
@@ -11,4 +12,3 @@ TextureRect
 MeshInstance3D
 CPUParticles3D
 Camera3D
-AnimationTree
