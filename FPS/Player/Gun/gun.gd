@@ -8,7 +8,7 @@ var bullet = load("res://Player/Gun/bullet.tscn")
 
 signal emitPlayerDamage(player,damage)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		var bullet_instance = bullet.instantiate()
 		bullet_instance.position = bullet_path.global_position

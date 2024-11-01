@@ -7,6 +7,7 @@ extends Node3D
 @onready var third_person_camera = $Armature/Skeleton3D/MainAttatchment/ThirdPersonCamera
 
 @onready var animation_tree = $AnimationTree
+var state_machine
 
 var main
 var head
@@ -15,21 +16,30 @@ var spine
 var hip
 
 func _ready():
-	animation_tree.set("parameters/conditions/RaiseGun", true)
+	state_machine = animation_tree.get("parameters/playback")
 	main = skeleton_3d.find_bone("Main")
 	head = skeleton_3d.find_bone("Head")
 	chest = skeleton_3d.find_bone("Chest")
 	spine = skeleton_3d.find_bone("Spine")
 	hip = skeleton_3d.find_bone("Hip")
 
-func _process(delta):
-	# Get the input direction and handle the corresponding animations.
-	var input_dir = Input.get_vector("left", "right", "forward", "back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		animation_tree.set("parameters/conditions/WalkGun", true)
+func travelInStandingState(walking):
+	if walking:
+		state_machine.travel("WalkGun")
 	else:
-		animation_tree.set("parameters/conditions/WalkGun", false)
+		state_machine.travel("StandingGun")
+
+func travelInCrouchedState(walking):
+	if walking:
+		state_machine.travel("CrouchWalkGun")
+	else:
+		state_machine.travel("CrouchedGun")
+
+func travelToStandingState():
+	state_machine.travel("StandGun")
+
+func travelToCrouchedState():
+	state_machine.travel("CrouchGun")
 
 func getHeadPos():
 	return skeleton_3d.get_bone_pose_position(head)

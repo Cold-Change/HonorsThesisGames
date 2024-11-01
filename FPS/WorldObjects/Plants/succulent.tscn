@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bptl8halahx6j"]
+[gd_scene load_steps=13 format=3 uid="uid://bptl8halahx6j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ffw6"]
 resource_name = "Material"
@@ -169,6 +169,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_twbkk")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_74vra"]
+radius = 1.19009
+
 [node name="SucculentModel" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
@@ -184,3 +187,9 @@ skeleton = NodePath("")
 transform = Transform3D(0.350733, 0, -0.365873, 0, 0.50683, 0, 0.365873, 0, 0.350733, 0, 1.81088, 0)
 mesh = SubResource("ArrayMesh_datpv")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.714606, 0)
+shape = SubResource("SphereShape3D_74vra")

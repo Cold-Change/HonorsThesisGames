@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://r35o6qno0hri"
-path="res://.godot/imported/Succulent.glb-c955439bc641caed1a57c21924a78e8b.scn"
+path="res://.godot/imported/Succulent.glb-eff04ba35f8fa2df4255ed3c4d015dcc.scn"
 
 [deps]
 
-source_file="res://WorldObjects/Succulent/Succulent.glb"
-dest_files=["res://.godot/imported/Succulent.glb-c955439bc641caed1a57c21924a78e8b.scn"]
+source_file="res://WorldObjects/Plants/Succulent.glb"
+dest_files=["res://.godot/imported/Succulent.glb-eff04ba35f8fa2df4255ed3c4d015dcc.scn"]
 
 [params]
 
