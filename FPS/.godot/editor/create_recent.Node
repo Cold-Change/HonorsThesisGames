@@ -1,7 +1,7 @@
+Timer
 Node
 CollisionShape3D
 StaticBody3D
-Timer
 Camera3D
 AnimationTree
 PhysicalBone3D
@@ -12,4 +12,3 @@ BoneAttachment3D
 RigidBody3D
 Label
 TextureRect
-MeshInstance3D

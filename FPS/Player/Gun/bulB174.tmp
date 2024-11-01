@@ -44,15 +44,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_42rxv")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kmfj0"]
-radius = 0.488623
-height = 1.55483
+radius = 0.224919
+height = 0.835317
 
 [node name="Bullet" type="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_miat7")
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 mesh = SubResource("ArrayMesh_kxtym")
 skeleton = NodePath("")
 

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var player_model = $PlayerModel
 @onready var player_ui = $PlayerUI
-var player_num = 1
+@export var entity_num = -1
 
 var base_speed = 6.0
 var crouch_speed = 3.0
@@ -10,7 +10,9 @@ var sprint_speed = 9.0
 var speed = 0
 
 var jump = 4.5
-var health = 100.0
+var health = 1.0
+@onready var init_position = position
+@onready var init_basis = transform.basis
 
 @onready var animation_refractory_timer = $AnimationRefractoryTimer
 var animation_refractory = false
@@ -24,16 +26,12 @@ var just_jumped = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var mouse_sens = 0.3
-var camera_angle_v=0
+var mouse_sens = 0.25
 var camera_mode = "first"
-
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player_ui.updateHealthBar(health)
-	if has_node("PlayerModel/Armature/Skeleton3D/HandRAttatchment/Gun"):
-		get_node("PlayerModel/Armature/Skeleton3D/HandRAttatchment/Gun").emitPlayerDamage.connect(takeDamage)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -63,10 +61,11 @@ func _unhandled_input(event):
 		player_model.updateChestRot(deg_to_rad(-change_v)*1/2)
 		player_model.updateSpineRot(deg_to_rad(-change_v)*1/2)
 
-func takeDamage(player,damage):
-	if player_num != player:
-		health -= damage
-		player_ui.updateHealthBar(health)
+func takeDamage(damage):
+	health -= damage
+	player_ui.updateHealthBar(health)
+	if health <= 0:
+		die()
 
 func handleCrouch():
 	if Input.is_action_just_pressed("crouch") and is_on_floor():
@@ -135,3 +134,15 @@ func handleCamera():
 		elif camera_mode == "first":
 			player_model.third_person_camera.current = true
 			camera_mode = "third"
+
+func getEntity():
+	return entity_num
+
+func reset():
+	transform.basis = init_basis
+	position = init_position
+	health = 100.0
+	player_ui.updateHealthBar(health)
+
+func die():
+	reset()

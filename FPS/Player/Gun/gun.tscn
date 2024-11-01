@@ -127,3 +127,8 @@ mesh = SubResource("ArrayMesh_tb2pn")
 skeleton = NodePath("")
 
 [node name="Bullets" type="Node" parent="."]
+
+[node name="NPCTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="NPCTimer" to="." method="_on_npc_timer_timeout"]
