@@ -2833,7 +2833,7 @@ bone_name = "Chest"
 bone_idx = 3
 
 [node name="ThirdPersonCamera" type="Camera3D" parent="Armature/Skeleton3D/MainAttatchment"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.989, -3.478)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.375778, 0.989, -3.478)
 attributes = SubResource("CameraAttributesPractical_2edaa")
 fov = 60.0
 

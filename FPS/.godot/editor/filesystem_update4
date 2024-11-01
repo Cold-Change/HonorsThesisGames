@@ -1,6 +1,5 @@
-res://CPU/enemy.tscn
+res://map_1.tscn
 res://Player/player.gd
-res://level_1.tscn
 res://Player/Gun/gun.tscn
 res://Player/player.tscn
 res://Player/player_model.tscn
@@ -8,9 +7,6 @@ res://Player/Gun/bullet.tscn
 res://UI/player_ui.tscn
 res://WorldObjects/Crab/crab.tscn
 res://WorldObjects/Plants/succulent.tscn
+res://CPU/enemy.tscn
 res://CPU/enemy_model.tscn
-res://Player/Gun/gun.gd
-res://Player/Gun/bullet.gd
 res://CPU/enemy.gd
-res://main.gd
-res://map_1.tscn

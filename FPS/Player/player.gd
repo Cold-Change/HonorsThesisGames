@@ -10,7 +10,7 @@ var sprint_speed = 9.0
 var speed = 0
 
 var jump = 4.5
-var health = 1.0
+var health = 100.0
 @onready var init_position = position
 @onready var init_basis = transform.basis
 

@@ -2772,7 +2772,7 @@ mesh = SubResource("ArrayMesh_vnb88")
 skin = SubResource("Skin_iogyj")
 
 [node name="HandRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.999863, 0.0148323, 0.00740038, 0.0090695, 0.115828, 0.993228, 0.0138747, 0.993159, -0.115947, -0.216588, 4.05381, 1.40439)
+transform = Transform3D(-0.999863, 0.0148331, 0.00740038, 0.00906965, 0.115828, 0.993228, 0.0138756, 0.993159, -0.115947, -0.216587, 4.05381, 1.40439)
 bone_name = "Hand.R"
 bone_idx = 12
 
@@ -2788,7 +2788,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_wbhb7")
 
 [node name="HandLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.999827, -0.0129954, -0.0133031, -0.0143084, 0.0806058, 0.996643, -0.0118795, 0.996661, -0.0807778, -0.151138, 4.06652, 1.40439)
+transform = Transform3D(-0.999827, -0.0129954, -0.0133031, -0.0143084, 0.0806058, 0.996643, -0.0118795, 0.996661, -0.0807777, -0.151138, 4.06652, 1.40439)
 bone_name = "Hand.L"
 bone_idx = 8
 
@@ -2815,7 +2815,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_8p2yk")
 
 [node name="LowerArmRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.894534, 0.446955, -0.00642782, -0.00829897, -0.00222865, 0.999963, 0.446924, 0.894554, 0.00570273, -0.56298, 4.05554, 0.711109)
+transform = Transform3D(-0.894533, 0.446955, -0.00642773, -0.00829887, -0.0022288, 0.999963, 0.446925, 0.894554, 0.00570285, -0.56298, 4.05554, 0.711109)
 bone_name = "LowerArm.R"
 bone_idx = 11
 
@@ -2828,7 +2828,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_gpvx2")
 
 [node name="LowerArmLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.83446, -0.55103, -0.00659441, -0.00872672, 0.00124848, 0.999961, -0.551, 0.834485, -0.00585049, 0.275913, 4.06556, 0.757656)
+transform = Transform3D(-0.83446, -0.551029, -0.00659444, -0.00872677, 0.00124845, 0.999961, -0.551, 0.834485, -0.00585046, 0.275913, 4.06556, 0.757656)
 bone_name = "LowerArm.L"
 bone_idx = 7
 
@@ -2841,7 +2841,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_x3o48")
 
 [node name="UpperArmLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.999457, -0.032294, -0.00659437, -0.00677976, 0.00563464, 0.999961, -0.0322556, 0.999462, -0.00585052, 0.300394, 4.06128, 2.69172e-07)
+transform = Transform3D(-0.999457, -0.032294, -0.0065944, -0.00677982, 0.00563464, 0.999961, -0.0322556, 0.999462, -0.00585049, 0.300394, 4.06128, 2.69172e-07)
 bone_name = "UpperArm.L"
 bone_idx = 6
 
@@ -2854,7 +2854,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_288sv")
 
 [node name="UpperArmRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.938068, -0.346391, -0.00642771, -0.00405413, -0.0075765, 0.999963, -0.346427, 0.93806, 0.00570282, -0.300394, 4.06128, 1.80667e-07)
+transform = Transform3D(-0.938068, -0.346391, -0.00642762, -0.00405395, -0.00757653, 0.999963, -0.346427, 0.93806, 0.00570294, -0.300394, 4.06128, 1.80667e-07)
 bone_name = "UpperArm.R"
 bone_idx = 10
 
@@ -2867,7 +2867,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_3187f")
 
 [node name="UpperLegRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.116278, -0.195911, -0.973703, -0.132605, -0.974639, 0.180264, -0.984322, 0.108158, -0.139309, -0.166268, 2.75515, 0)
+transform = Transform3D(0.116278, -0.195911, -0.973703, -0.132605, -0.974639, 0.180264, -0.984322, 0.108158, -0.139308, -0.166268, 2.75515, 0)
 bone_name = "UpperLeg.R"
 bone_idx = 17
 
@@ -2880,7 +2880,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_8meca")
 
 [node name="UpperLegLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.11628, 0.195911, 0.973703, 0.132605, -0.974639, 0.180264, 0.984322, 0.108157, -0.13931, 0.166268, 2.75515, 0)
+transform = Transform3D(0.116278, 0.195911, 0.973703, 0.132605, -0.974639, 0.180264, 0.984322, 0.108158, -0.139308, 0.166268, 2.75515, 0)
 bone_name = "UpperLeg.L"
 bone_idx = 15
 
@@ -2893,7 +2893,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_t1fmf")
 
 [node name="LowerLegLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.185098, 0.0575718, 0.981032, -0.125409, -0.988737, 0.0816855, 0.974683, -0.138149, -0.175793, 0.438038, 1.40312, 0.150037)
+transform = Transform3D(0.185096, 0.0575722, 0.981032, -0.125409, -0.988737, 0.0816858, 0.974683, -0.138149, -0.175792, 0.438038, 1.40312, 0.150037)
 bone_name = "LowerLeg.L"
 bone_idx = 16
 
@@ -2906,7 +2906,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_nqbjl")
 
 [node name="LowerLegRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.185096, -0.0575722, -0.981033, 0.125409, -0.988737, 0.0816858, -0.974683, -0.138149, -0.175792, -0.438038, 1.40312, 0.150037)
+transform = Transform3D(0.185096, -0.0575722, -0.981032, 0.125409, -0.988737, 0.0816858, -0.974683, -0.138149, -0.175792, -0.438038, 1.40312, 0.150037)
 bone_name = "LowerLeg.R"
 bone_idx = 18
 
@@ -2919,7 +2919,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_etcto")
 
 [node name="FootRAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.930701, -0.0352078, -0.364082, -0.288307, -0.683176, -0.670932, -0.22511, 0.729405, -0.645983, -0.500577, 0.329206, -2.63678e-15)
+transform = Transform3D(0.930701, -0.0352077, -0.364082, -0.288307, -0.683176, -0.670932, -0.22511, 0.729405, -0.645983, -0.500577, 0.329206, 0)
 bone_name = "Foot.R"
 bone_idx = 22
 
@@ -2932,7 +2932,7 @@ collision_mask = 0
 shape = SubResource("ConcavePolygonShape3D_fo7gm")
 
 [node name="FootLAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.930701, 0.0352078, 0.364082, 0.288307, -0.683176, -0.670932, 0.22511, 0.729405, -0.645983, 0.500577, 0.329206, -2.63678e-15)
+transform = Transform3D(0.930701, 0.0352077, 0.364082, 0.288307, -0.683176, -0.670932, 0.22511, 0.729405, -0.645983, 0.500577, 0.329206, 0)
 bone_name = "Foot.L"
 bone_idx = 20
 
