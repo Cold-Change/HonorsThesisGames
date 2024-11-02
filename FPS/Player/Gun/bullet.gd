@@ -1,6 +1,6 @@
 extends Node3D
 
-var speed = 40
+var speed = 80
 var damage = 20
 var collisionMade = false
 

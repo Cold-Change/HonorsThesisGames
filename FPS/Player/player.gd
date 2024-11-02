@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
+@export var entity_num = -1
 @onready var player_model = $PlayerModel
 @onready var player_ui = $PlayerUI
-@export var entity_num = -1
 
 var base_speed = 6.0
 var crouch_speed = 3.0
@@ -26,7 +26,7 @@ var just_jumped = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var mouse_sens = 0.25
+var mouse_sens = 0.20
 var camera_mode = "first"
 
 func _ready():

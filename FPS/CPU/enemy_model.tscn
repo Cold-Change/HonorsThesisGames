@@ -1,5 +1,6 @@
-[gd_scene load_steps=68 format=3 uid="uid://bncakrj7dw54h"]
+[gd_scene load_steps=69 format=3 uid="uid://bncakrj7dw54h"]
 
+[ext_resource type="Script" path="res://CPU/enemy_model.gd" id="1_ebla8"]
 [ext_resource type="PackedScene" uid="uid://5n0l6n0aysq3" path="res://Player/Gun/gun.tscn" id="1_if3kv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ta2x"]
@@ -2521,6 +2522,7 @@ _data = {
 }
 
 [node name="EnemyModel" type="Node3D"]
+script = ExtResource("1_ebla8")
 
 [node name="Armature" type="Node3D" parent="."]
 

@@ -1,8 +1,8 @@
+CollisionShape3D
+Camera3D
 Timer
 Node
-CollisionShape3D
 StaticBody3D
-Camera3D
 AnimationTree
 PhysicalBone3D
 RemoteTransform3D
