@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jo6vts5jiadn"
-path="res://.godot/imported/rock_b_with_moss.glb-4bafa2b901dba89373e18d2de4a389ba.scn"
+uid="uid://c7p8ckb3exe6c"
+path="res://.godot/imported/Rock1Moss.glb-f7480d01fa14e4d846b69803505c5092.scn"
 
 [deps]
 
-source_file="res://WorldObjects/Rocks/rock_b_with_moss.glb"
-dest_files=["res://.godot/imported/rock_b_with_moss.glb-4bafa2b901dba89373e18d2de4a389ba.scn"]
+source_file="res://WorldObjects/Rocks/Rock1Moss.glb"
+dest_files=["res://.godot/imported/Rock1Moss.glb-f7480d01fa14e4d846b69803505c5092.scn"]
 
 [params]
 

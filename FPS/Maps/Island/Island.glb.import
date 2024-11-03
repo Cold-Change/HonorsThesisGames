@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7p8ckb3exe6c"
-path="res://.godot/imported/rock_a_with_moss.glb-cffba75ddaaf5572c1168ce1b8c86115.scn"
+uid="uid://clmn66ojdjjh4"
+path="res://.godot/imported/Island.glb-b1df4044a6cc360b771d5b762d342fc6.scn"
 
 [deps]
 
-source_file="res://WorldObjects/Rocks/rock_a_with_moss.glb"
-dest_files=["res://.godot/imported/rock_a_with_moss.glb-cffba75ddaaf5572c1168ce1b8c86115.scn"]
+source_file="res://Maps/Island/Island.glb"
+dest_files=["res://.godot/imported/Island.glb-b1df4044a6cc360b771d5b762d342fc6.scn"]
 
 [params]
 

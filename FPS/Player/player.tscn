@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bojux1muuloxn" path="res://UI/player_ui.tscn" id="3_fobn8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ywxc"]
-radius = 0.25
-height = 2.36996
+radius = 0.46267
+height = 3.55928
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -15,8 +15,7 @@ floor_snap_length = 0.08
 script = ExtResource("1_ukyh8")
 
 [node name="HitBox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18458, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76865, 0)
 shape = SubResource("CapsuleShape3D_3ywxc")
 
 [node name="PlayerModel" parent="." instance=ExtResource("2_c0vva")]

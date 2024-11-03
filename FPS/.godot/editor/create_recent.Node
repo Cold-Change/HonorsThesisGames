@@ -1,7 +1,11 @@
+PathFollow3D
+RayCast3D
+Path3D
+Node3D
+Node
 CollisionShape3D
 Camera3D
 Timer
-Node
 StaticBody3D
 AnimationTree
 PhysicalBone3D
@@ -9,6 +13,3 @@ RemoteTransform3D
 ProgressBar
 TextureProgressBar
 BoneAttachment3D
-RigidBody3D
-Label
-TextureRect

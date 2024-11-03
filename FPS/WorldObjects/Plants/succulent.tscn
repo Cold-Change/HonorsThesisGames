@@ -173,22 +173,25 @@ shadow_mesh = SubResource("ArrayMesh_twbkk")
 radius = 1.19009
 
 [node name="SucculentModel" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48272, 0)
 mesh = SubResource("ArrayMesh_xd1qo")
 skeleton = NodePath("")
 
 [node name="Circle" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44272, 0)
 mesh = SubResource("ArrayMesh_cvgpp")
 skeleton = NodePath("")
 
 [node name="Cube_006" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.350733, 0, -0.365873, 0, 0.50683, 0, 0.365873, 0, 0.350733, 0, 1.81088, 0)
+transform = Transform3D(0.350733, 0, -0.365873, 0, 0.50683, 0, 0.365873, 0, 0.350733, 0, 2.2936, 0)
 mesh = SubResource("ArrayMesh_datpv")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48272, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.714606, 0)

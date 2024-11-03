@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://d23al4srxjlk2"]
+
+[ext_resource type="Script" path="res://Player/third_person_camera.gd" id="1_fel6m"]
+
+[sub_resource type="Curve3D" id="Curve3D_mxr65"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ssjvp"]
+auto_exposure_enabled = true
+
+[node name="ThirdPersonCamera" type="Node3D"]
+script = ExtResource("1_fel6m")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_mxr65")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1.59758)
+progress = 1.5975
+
+[node name="Camera" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
+attributes = SubResource("CameraAttributesPractical_ssjvp")
+fov = 60.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Path3D/PathFollow3D/Camera"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.74581e-07, 0, -1.99698)
+target_position = Vector3(0, 0, 1)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Path3D/PathFollow3D/Camera"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 0.3, 8.44692e-08, 0, 0.966214)
+target_position = Vector3(0, 0, 1)

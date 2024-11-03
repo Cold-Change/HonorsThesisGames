@@ -29,9 +29,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_sens = 0.20
 var camera_mode = "first"
 
+const COLORS = {"Red": Color("e74f56"),"Yellow": Color("e7e219"),"Blue": Color("6572e7"),"Green": Color("49e76b"),"Orange": Color("e78c25"),"Cyan": Color("49e2e7")}
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player_ui.updateHealthBar(health)
+	#changeColor("Blue")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -119,7 +122,7 @@ func handleAnimations():
 		animation_refractory = true
 	else:
 		animation_refractory = false
-
+	
 	if !(player_model.state_machine.get_current_node() in ["StandGun","CrouchGun","JumpGun","JumpGun 2"]) and !animation_refractory:
 		if crouched:
 			player_model.travelInCrouchedState(walking)
@@ -132,7 +135,7 @@ func handleCamera():
 			player_model.first_person_camera.current = true
 			camera_mode = "first"
 		elif camera_mode == "first":
-			player_model.third_person_camera.current = true
+			player_model.third_person_camera.camera.current = true
 			camera_mode = "third"
 
 func getEntity():
@@ -146,3 +149,8 @@ func reset():
 
 func die():
 	reset()
+
+func changeColor(color):
+	for mesh in player_model.skeleton_3d.get_children():
+		if mesh is MeshInstance3D:
+			mesh.mesh.surface_get_material(0).albedo_color = COLORS[color]

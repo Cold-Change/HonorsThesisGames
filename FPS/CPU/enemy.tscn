@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://CPU/enemy.gd" id="1_v2itq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ywxc"]
-radius = 0.25
-height = 2.36996
+radius = 0.422701
+height = 3.53563
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 collision_layer = 2
@@ -14,8 +14,7 @@ floor_snap_length = 0.08
 script = ExtResource("1_v2itq")
 
 [node name="HitBox" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18458, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76239, 0)
 shape = SubResource("CapsuleShape3D_3ywxc")
 
 [node name="EnemyModel" parent="." instance=ExtResource("1_pl17d")]

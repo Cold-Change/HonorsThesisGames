@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ckody67xwh27k"
-path="res://.godot/imported/rock_b.glb-37d255724579e6b5ebc96409ff3d527a.scn"
+uid="uid://boxu76jhm3vue"
+path="res://.godot/imported/Vase.glb-2bea50e08c743861ec54d532d8c1d2be.scn"
 
 [deps]
 
-source_file="res://WorldObjects/Rocks/rock_b.glb"
-dest_files=["res://.godot/imported/rock_b.glb-37d255724579e6b5ebc96409ff3d527a.scn"]
+source_file="res://WorldObjects/General/Vase.glb"
+dest_files=["res://.godot/imported/Vase.glb-2bea50e08c743861ec54d532d8c1d2be.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6vui3620xhws"
-path="res://.godot/imported/rock_a.glb-0e543960d63d1b98b7ab665bcbabe3f1.scn"
+uid="uid://dk6fju3lu3kk4"
+path="res://.godot/imported/TinyPlayerHat.glb-d592136c4072d040388b6d77eceb7994.scn"
 
 [deps]
 
-source_file="res://WorldObjects/Rocks/rock_a.glb"
-dest_files=["res://.godot/imported/rock_a.glb-0e543960d63d1b98b7ab665bcbabe3f1.scn"]
+source_file="res://WorldObjects/Accessories/TinyPlayerHat.glb"
+dest_files=["res://.godot/imported/TinyPlayerHat.glb-d592136c4072d040388b6d77eceb7994.scn"]
 
 [params]
 
