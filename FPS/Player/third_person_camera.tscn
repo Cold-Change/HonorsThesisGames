@@ -29,8 +29,10 @@ fov = 60.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Path3D/PathFollow3D/Camera"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.74581e-07, 0, -1.99698)
+visible = false
 target_position = Vector3(0, 0, 1)
 
 [node name="RayCast3D2" type="RayCast3D" parent="Path3D/PathFollow3D/Camera"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 0.3, 8.44692e-08, 0, 0.966214)
+visible = false
 target_position = Vector3(0, 0, 1)

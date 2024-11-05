@@ -11,6 +11,7 @@ height = 3.55928
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 3
+floor_stop_on_slope = false
 floor_snap_length = 0.08
 script = ExtResource("1_ukyh8")
 

@@ -19,12 +19,13 @@ func _on_clear_timer_timeout():
 
 func _on_hit_box_body_entered(body):
 	if !collisionMade:
+		var entity = body.get_parent().get_parent().get_parent().get_parent().get_parent()
 		if body.get_collision_layer() == 4:
-			entityTakeDamage.emit(body.get_parent().get_parent().get_parent().get_parent().get_parent().entity_num,damage*.5)
+			entityTakeDamage.emit(entity.entity_num,damage*.5)
 		elif body.get_collision_layer() == 8:
-			entityTakeDamage.emit(body.get_parent().get_parent().get_parent().get_parent().get_parent().entity_num,damage*.75)
+			entityTakeDamage.emit(entity.entity_num,damage*.75)
 		elif body.get_collision_layer() == 16:
-			entityTakeDamage.emit(body.get_parent().get_parent().get_parent().get_parent().get_parent().entity_num,damage)
+			entityTakeDamage.emit(entity.entity_num,damage)
 		elif body.has_method("takeDamage"):
 			body.takeDamage(damage)
 	collisionMade = true

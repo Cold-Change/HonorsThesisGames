@@ -1,7 +1,8 @@
-[gd_scene load_steps=77 format=3 uid="uid://bxmhf47j765pw"]
+[gd_scene load_steps=78 format=3 uid="uid://bxmhf47j765pw"]
 
 [ext_resource type="Script" path="res://Player/player_model.gd" id="1_o5evq"]
 [ext_resource type="PackedScene" uid="uid://5n0l6n0aysq3" path="res://Player/Gun/gun.tscn" id="2_q1h57"]
+[ext_resource type="PackedScene" uid="uid://c6uv8oxuv8bqj" path="res://WorldObjects/Accessories/tall_tophat.tscn" id="3_m7ugu"]
 [ext_resource type="PackedScene" uid="uid://8iltkybwpd46" path="res://WorldObjects/Accessories/tophat.tscn" id="3_w0asj"]
 [ext_resource type="PackedScene" uid="uid://dxde1xhsaxqa" path="res://WorldObjects/Accessories/tiny_player_hat.tscn" id="4_w7tgd"]
 [ext_resource type="PackedScene" uid="uid://d23al4srxjlk2" path="res://Player/third_person_camera.tscn" id="5_3i3yg"]
@@ -2963,7 +2964,7 @@ bone_name = "Hand.R"
 bone_idx = 12
 
 [node name="Gun" parent="Armature/Skeleton3D/HandRAttatchment" instance=ExtResource("2_q1h57")]
-transform = Transform3D(-0.999999, 9.30158e-08, -2.79397e-09, -5.58794e-09, -1.19209e-07, 1, 9.61591e-08, 1, 1.19209e-07, -0.0136086, 0.179814, 0.125828)
+transform = Transform3D(-0.999999, -8.68258e-08, 1.01997e-08, 0, 0.116671, 0.993171, -8.74227e-08, 0.993171, -0.116671, -0.0136086, 0.179814, 0.125828)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Armature/Skeleton3D/HandRAttatchment"]
 transform = Transform3D(-0.0854839, 5.71309e-07, -0.996339, -0.996339, -9.57344e-07, 0.0854839, -9.03469e-07, 1, 7.5949e-07, -0.156329, -1.82204, -4.06128)
@@ -3007,10 +3008,13 @@ shape = SubResource("ConcavePolygonShape3D_1hmrb")
 
 [node name="Accessory" type="Node3D" parent="Armature/Skeleton3D/HeadAttatchment"]
 
-[node name="Tophat" parent="Armature/Skeleton3D/HeadAttatchment/Accessory" instance=ExtResource("3_w0asj")]
+[node name="TallTophat" parent="Armature/Skeleton3D/HeadAttatchment/Accessory" instance=ExtResource("3_m7ugu")]
 visible = false
 
+[node name="Tophat" parent="Armature/Skeleton3D/HeadAttatchment/Accessory" instance=ExtResource("3_w0asj")]
+
 [node name="TinyPlayerHat" parent="Armature/Skeleton3D/HeadAttatchment/Accessory" instance=ExtResource("4_w7tgd")]
+visible = false
 
 [node name="MainAttatchment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
 transform = Transform3D(1, 0, 2.38418e-07, 0, 1, 0, -2.38418e-07, 0, 1, 0, 3.56411, 0)

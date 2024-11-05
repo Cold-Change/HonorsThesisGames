@@ -26,7 +26,7 @@ var just_jumped = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var mouse_sens = 0.20
+var mouse_sens = 0.15
 var camera_mode = "first"
 
 const COLORS = {"Red": Color("e74f56"),"Yellow": Color("e7e219"),"Blue": Color("6572e7"),"Green": Color("49e76b"),"Orange": Color("e78c25"),"Cyan": Color("49e2e7")}
