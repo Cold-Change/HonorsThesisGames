@@ -28,7 +28,7 @@ position = Vector2(584, 680)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("background_image", "player")]
 position = Vector2(584, 600)
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("3_3lch2")

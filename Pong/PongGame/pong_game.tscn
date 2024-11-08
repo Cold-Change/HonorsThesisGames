@@ -1,111 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpnls6grkt6ns"]
+[gd_scene load_steps=5 format=3 uid="uid://cpnls6grkt6ns"]
 
 [ext_resource type="PackedScene" uid="uid://bu8qey87rj6vm" path="res://Ball/ball.tscn" id="1_aia7q"]
 [ext_resource type="Script" path="res://PongGame/pong_game.gd" id="1_s6xdw"]
 [ext_resource type="PackedScene" uid="uid://j8neqvovxkay" path="res://Paddle/paddle.tscn" id="2_0p1m1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsgnx"]
-size = Vector2(1320, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_umgad"]
-size = Vector2(1320, 20)
+[ext_resource type="PackedScene" uid="uid://bdpyfcu7c5qqj" path="res://board.tscn" id="2_3gfex"]
 
 [node name="PongGame" type="Node2D"]
 script = ExtResource("1_s6xdw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 1300.0
-offset_bottom = 740.0
-color = Color(0, 0, 0, 1)
-
-[node name="Line2D" type="Line2D" parent="ColorRect"]
-position = Vector2(32, -2)
-points = PackedVector2Array(628, 2, 628, 762)
-width = 8.0
-default_color = Color(0.4, 0.4, 0.4, 1)
-sharp_limit = 2121.0
-
-[node name="CenterContainer" type="HBoxContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 160
-alignment = 1
-
-[node name="P1Score" type="Label" parent="ColorRect/CenterContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
-theme_override_font_sizes/font_size = 100
-text = "0"
-
-[node name="P2Score" type="Label" parent="ColorRect/CenterContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
-theme_override_font_sizes/font_size = 100
-text = "0"
-
-[node name="GameOverMessage" type="Label" parent="ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = -143.5
-offset_right = 131.0
-offset_bottom = -88.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GameOverMessage2" type="Label" parent="ColorRect"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = 86.0
-offset_right = 131.0
-offset_bottom = 141.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "PLAY AGAIN?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-collision_layer = 2
-collision_mask = 7
-
-[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(640, -10)
-shape = SubResource("RectangleShape2D_tsgnx")
-
-[node name="BottomWall" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(640, 730)
-shape = SubResource("RectangleShape2D_umgad")
+[node name="Board" parent="." instance=ExtResource("2_3gfex")]
 
 [node name="Ball" parent="." instance=ExtResource("1_aia7q")]
+z_index = 1
 position = Vector2(640, 360)
 
 [node name="Paddle" parent="." instance=ExtResource("2_0p1m1")]
+z_index = 1
 position = Vector2(30, 150)
 player_num = 1
 
 [node name="Paddle2" parent="." instance=ExtResource("2_0p1m1")]
+z_index = 1
 position = Vector2(1250, 570)
 player_num = 2

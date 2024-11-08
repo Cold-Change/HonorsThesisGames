@@ -1,3 +1,8 @@
+Node
+Panel
+CharacterBody2D
+Control
+ParallaxBackground
 CollisionShape2D
 Area2D
 Label
@@ -7,7 +12,3 @@ CenterContainer
 Container
 VFlowContainer
 HFlowContainer
-Timer
-CharacterBody2D
-ColorRect
-StaticBody2D

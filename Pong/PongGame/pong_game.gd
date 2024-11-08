@@ -1,10 +1,9 @@
 extends Node2D
 
-@onready var p1_score_label = $ColorRect/CenterContainer/P1Score
-@onready var p2_score_label = $ColorRect/CenterContainer/P2Score
-@onready var game_over_message = $ColorRect/GameOverMessage
-@onready var game_over_message_2 = $ColorRect/GameOverMessage2
-
+@onready var p1_score_label = $Board/UI/CenterContainer/P1Score
+@onready var p2_score_label = $Board/UI/CenterContainer/P2Score
+@onready var winner_label = $Board/UI/WinnerLabel
+@onready var play_again_label = $Board/UI/PlayAgainLabel
 
 @onready var ball = $Ball
 @onready var state = "start"
@@ -28,7 +27,7 @@ func _physics_process(_delta):
 
 #Checks the position of the ball
 func checkPosition():
-	#When the ball crosses the boarder of the screen, add a point to the opposite side
+	#When the ball crosses the border of the screen to the left or right, add a point to the opposite side
 	if ball.position.x < 0:
 		p2_score += 1
 	elif ball.position.x > 1280:
@@ -60,12 +59,12 @@ func initBallMovement():
 #Checks for winner and ends game if a winner is found
 func checkWinner():
 	if p1_score >= 11 or p2_score >= 11:
-		game_over_message_2.visible = true
+		play_again_label.visible = true
 		if p1_score >= 11:
-			game_over_message.text = "PLAYER 1 WINS!"
+			winner_label.text = "PLAYER 1 WINS!"
 		else:
-			game_over_message.text = "PLAYER 2 WINS!"
-		game_over_message.visible = true
+			winner_label.text = "PLAYER 2 WINS!"
+		winner_label.visible = true
 		state = "game_over"
 
 #Full reset of the game
@@ -74,8 +73,8 @@ func restartGame():
 	p1_score = 0
 	p2_score = 0
 	turn = 0
-	game_over_message.visible = false
-	game_over_message_2.visible = false
+	winner_label.visible = false
+	play_again_label.visible = false
 	p1_score_label.text = str(p1_score)
 	p2_score_label.text = str(p2_score)
 	state = "start"

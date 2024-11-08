@@ -30,5 +30,5 @@ func runMovementBehavior():
 		
 		#If ball collided with wall, run this behavior
 		if normal.y and $RefY.is_stopped():
-			speed[1] = -speed[1]
+			speed.y = -speed.y
 			$RefY.start()
