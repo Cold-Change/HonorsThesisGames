@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var player_num : int
 @export var speed = 300
-signal paddleZone
 
 func _physics_process(_delta):
 	var direction : float

@@ -1,19 +1,11 @@
 extends RigidBody2D
 
+@onready var clear_timer = $ClearTimer
+
 var angle : float
 var speed : Vector2
-var window_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-var window_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 
 func _physics_process(delta):
-	if position.x < 0:
-		queue_free()
-	elif position.x > window_width:
-		queue_free()
-	elif position.y < 0:
-		queue_free()
-	elif position.y > window_height:
-		queue_free()
 	move_and_collide(speed*delta)
 
 func _on_area_2d_body_entered(body):
@@ -25,3 +17,6 @@ func _on_area_2d_body_entered(body):
 func set_speed():
 	speed.x += sin(angle) * 400
 	speed.y += -cos(angle) * 400
+
+func _on_clear_timer_timeout():
+	queue_free()

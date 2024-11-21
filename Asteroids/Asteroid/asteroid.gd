@@ -1,8 +1,8 @@
 extends RigidBody2D
 class_name Asteroid
 
-@onready var size = 5
-@onready var splits = 4
+var size = 5
+var splits = 1
 @onready var speed : Vector2
 
 func _ready():
