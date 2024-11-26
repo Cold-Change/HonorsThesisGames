@@ -101,6 +101,6 @@ position = Vector2(917, 258)
 [node name="Lasers" type="Node" parent="."]
 
 [node name="AsteroidTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 
 [connection signal="timeout" from="AsteroidTimer" to="." method="_on_asteroid_timer_timeout"]

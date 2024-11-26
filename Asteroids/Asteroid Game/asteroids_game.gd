@@ -54,6 +54,10 @@ func updateScoreLabel():
 	if Globals.score > Globals.high_score:
 		Globals.high_score = Globals.score
 		high_score_label.text = "High Score: " + str(Globals.high_score)
+	if floor(Globals.life_talley) == 5:
+		lives += 1
+		Globals.life_talley -= 5
+		updateLives()
 
 func updateLives():
 	for i in ui_lives.get_children():
@@ -90,12 +94,11 @@ func runStateMachine():
 		if state == "start":
 			state = "running"
 			Globals.score = 0
+			Globals.life_talley = 0
 			initPlayer()
 			asteroid_timer.start()
 			toggleUIVisibility()
 		elif state == "game_over":
-			#state = "start"
-			#game_over_text.text = "PLAY AGAIN?"
 			get_tree().change_scene_to_file("res://Asteroid Game/asteroids_game.tscn")
 	if state == "running":
 		checkPosition(player, 0)
@@ -128,14 +131,14 @@ func createNewAsteroid():
 		new_asteroid.position = Vector2([-25, window_width + 25][randi_range(0,1)], randi_range(0, window_height))
 	else:
 		new_asteroid.position = Vector2(randi_range(0, window_width), [-25, window_height + 25][randi_range(0,1)])
-	new_asteroid.splits = min(floor(level / 4) + 1, 5)
+	new_asteroid.splits = randi_range(1, min(floor(level / 9) + 1, 5))
 	asteroids.add_child(new_asteroid)
 
 func _on_asteroid_timer_timeout():
 	createNewAsteroid()
 	createNewAsteroid()
-	if asteroid_timer.wait_time * 0.97 <= 1:
+	if asteroid_timer.wait_time * 0.99 <= 1:
 		asteroid_timer.wait_time = 1
 	else:
-		asteroid_timer.wait_time *= 0.97
+		asteroid_timer.wait_time *= 0.99
 	level += 1;

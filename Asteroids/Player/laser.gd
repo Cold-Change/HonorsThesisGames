@@ -10,7 +10,8 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("breakAsteroid"):
-		Globals.score += 1000 / (body.size * 10)
+		Globals.score += 1000 / (body.size * 5)
+		Globals.life_talley += 1.0 / (body.size * 5)
 		body.call_deferred("breakAsteroid")
 	queue_free()
 
