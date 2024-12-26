@@ -1,7 +1,5 @@
 res://test_level.tscn
 res://Player/player.gd
-res://WorldObjects/Accessories/tall_tophat.tscn
-res://WorldObjects/Accessories/tophat.tscn
 res://Player/player_model.tscn
 res://Player/player.tscn
 res://Player/third_person_camera.tscn

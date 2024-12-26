@@ -1,17 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732395948
-Globals.gd::GDScript::-1::1732326645::0::1::::<>Node<>::
-icon.svg::CompressedTexture2D::2547178377447761225::1727385075::1727640237::1::::<><>::
-::res://Asteroid/::1732382301
-asteroid.gd::GDScript::-1::1732200919::0::1::::Asteroid<>RigidBody2D<>::
-asteroid.tscn::PackedScene::1778749837203246560::1732382301::0::1::::<><>::res://Asteroid/asteroid.gd
-::res://Asteroid Game/::1732382625
-asteroids_game.gd::GDScript::-1::1732382625::0::1::::<>Node2D<>::
-asteroids_game.tscn::PackedScene::4189161240774568406::1732382625::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
-::res://Asteroid Game/Graphics/::1732198191
-Life.png::CompressedTexture2D::6137093015865465914::1732198178::1732198191::1::::<><>::
-::res://Player/::1732382301
-laser.gd::GDScript::-1::1732381633::0::1::::<>RigidBody2D<>::
-laser.tscn::PackedScene::8016835751242416159::1732382301::0::1::::<><>::res://Player/laser.gd
-player.gd::GDScript::-1::1727999977::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8619962741313067656::1732382301::0::1::::<><>::res://Player/player.gd
+::res://::1735246028
+Globals.gd::GDScript::-1::1733265332::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::2547178377447761225::1727390419::1735246029::1::::<><>::
+::res://Asteroid/::1735244241
+asteroid.gd::GDScript::-1::1732549333::0::1::::Asteroid<>RigidBody2D<>::
+asteroid.tscn::PackedScene::1778749837203246560::1735244241::0::1::::<><>::res://Asteroid/asteroid.gd
+::res://Asteroid Game/::1735244241
+asteroids_game.gd::GDScript::-1::1733265332::0::1::::<>Node2D<>::
+asteroids_game.tscn::PackedScene::4189161240774568406::1735244241::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
+::res://Asteroid Game/Graphics/::1732549333
+Life.png::CompressedTexture2D::6137093015865465914::1732549333::1732549333::1::::<><>::
+::res://Player/::1735244241
+laser.gd::GDScript::-1::1733265332::0::1::::<>RigidBody2D<>::
+laser.tscn::PackedScene::8016835751242416159::1735244241::0::1::::<><>::res://Player/laser.gd
+player.gd::GDScript::-1::1728049382::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::8619962741313067656::1735244241::0::1::::<><>::res://Player/player.gd
