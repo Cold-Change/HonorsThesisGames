@@ -40,6 +40,6 @@ func initMovement():
 	elif size == 2:
 		speed = Vector2(randi_range(350,400)*sin(angle),randi_range(350,400)*-cos(angle))
 		scale *= .4
-	elif size == 1:
+	else:
 		speed = Vector2(randi_range(450,500)*sin(angle),randi_range(450,500)*-cos(angle))
 		scale *= .2

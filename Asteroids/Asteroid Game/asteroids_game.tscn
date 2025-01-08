@@ -6,6 +6,7 @@
 
 [node name="AsteroidsGame" type="Node2D"]
 process_mode = 3
+process_priority = 1
 script = ExtResource("1_wfecq")
 
 [node name="BackGround" type="ColorRect" parent="."]
@@ -14,7 +15,7 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_e412r")]
-position = Vector2(608, 380)
+position = Vector2(640, 360)
 
 [node name="UI" type="Control" parent="."]
 z_index = 1

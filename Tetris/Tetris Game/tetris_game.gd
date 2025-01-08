@@ -104,7 +104,6 @@ func levelUp():
 	else:
 		movement_timer.wait_time = 0.05
 	level_label.text = "Level: " + str(Globals.level)
-	print(movement_timer.wait_time)
 
 func checkPositionOnMove(direction):
 	for square in get_node("Tetromino").get_children():
