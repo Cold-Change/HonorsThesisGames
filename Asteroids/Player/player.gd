@@ -65,6 +65,7 @@ func handleInvulnerability():
 
 func initInvulnerability():
 	area_2d.set_deferred("monitoring",false)
+	velocity = velocity / 2
 	acceleration = 200
 	friction = 50
 	invulnerability_timer.start()

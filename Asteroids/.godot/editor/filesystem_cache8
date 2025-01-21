@@ -1,17 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1736280251
+::res://::1737490764
 Globals.gd::GDScript::-1::1732326645::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::2547178377447761225::1727385075::1736280252::1::::<><>::
-::res://Asteroid/::1734291532
-asteroid.gd::GDScript::-1::1732200919::0::1::::Asteroid<>RigidBody2D<>::
-asteroid.tscn::PackedScene::1778749837203246560::1734291532::0::1::::<><>::res://Asteroid/asteroid.gd
-::res://Asteroid Game/::1734291532
-asteroids_game.gd::GDScript::-1::1732396265::0::1::::<>Node2D<>::
-asteroids_game.tscn::PackedScene::4189161240774568406::1734291532::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
+::res://Asteroid/::1737490110
+asteroid.gd::GDScript::-1::1737490110::0::1::::Asteroid<>RigidBody2D<>::
+asteroid.tscn::PackedScene::1778749837203246560::1737483038::0::1::::<><>::res://Asteroid/asteroid.gd
+::res://Asteroid Game/::1737483037
+asteroids_game.gd::GDScript::-1::1736284164::0::1::::<>Node2D<>::
+asteroids_game.tscn::PackedScene::4189161240774568406::1737483037::0::1::::<><>::res://Asteroid Game/asteroids_game.gd<>uid://du2tr6fr0weke::::res://Player/player.tscn<>uid://0lv0q6v87sqi::::res://Asteroid/asteroid.tscn
 ::res://Asteroid Game/Graphics/::1732198191
 Life.png::CompressedTexture2D::6137093015865465914::1732198178::1732198191::1::::<><>::
-::res://Player/::1734291532
-laser.gd::GDScript::-1::1732381633::0::1::::<>RigidBody2D<>::
-laser.tscn::PackedScene::8016835751242416159::1734291532::0::1::::<><>::res://Player/laser.gd
-player.gd::GDScript::-1::1727999977::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::8619962741313067656::1734291532::0::1::::<><>::res://Player/player.gd
+::res://Player/::1737490110
+laser.gd::GDScript::-1::1736281313::0::1::::<>RigidBody2D<>::
+laser.tscn::PackedScene::8016835751242416159::1737483038::0::1::::<><>::res://Player/laser.gd
+player.gd::GDScript::-1::1737490100::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::8619962741313067656::1737490110::0::1::::<><>::res://Player/player.gd

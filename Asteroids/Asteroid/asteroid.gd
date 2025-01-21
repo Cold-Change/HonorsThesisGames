@@ -19,12 +19,13 @@ func breakAsteroid():
 		new_asteroid_1.splits = splits - 1
 		new_asteroid_1.position = position
 		new_asteroid_1.initMovement()
-		var new_asteroid_2 = load("res://Asteroid/asteroid.tscn").instantiate()
-		get_parent().add_child(new_asteroid_2)
-		new_asteroid_2.size = size - 1
-		new_asteroid_2.splits = splits - 1
-		new_asteroid_2.position = position
-		new_asteroid_2.initMovement()
+		if randi_range(0,1):
+			var new_asteroid_2 = load("res://Asteroid/asteroid.tscn").instantiate()
+			get_parent().add_child(new_asteroid_2)
+			new_asteroid_2.size = size - 1
+			new_asteroid_2.splits = splits - 1
+			new_asteroid_2.position = position
+			new_asteroid_2.initMovement()
 	queue_free()
 
 func initMovement():

@@ -11,3 +11,4 @@ func _physics_process(_delta):
 	else:
 		position.y = player.position.y
 	position.x = player.position.x
+
