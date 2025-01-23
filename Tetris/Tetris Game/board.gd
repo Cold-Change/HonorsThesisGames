@@ -29,7 +29,7 @@ func updateBoard():
 		if !board_array[square_index]:
 			square.free()
 		elif board_array[square_index] != Globals.Tetromino.find_key(square_index):
-			square.get_node("TetrominoSquares-sheet").set_frame(Globals.Tetromino[board_array[int(square.name.get_slice('Square',1))]])
+			square.set_frame(Globals.Tetromino[board_array[int(square.name.get_slice('Square',1))]])
 	for i in board_array.size():
 		if board_array[i] and !has_node("Square" + str(i)):
 			var x = i % 10
@@ -38,7 +38,7 @@ func updateBoard():
 			add_child(new_square)
 			new_square.position = Vector2(x + .5,y - 3.5) * 32
 			new_square.name = "Square" + str(i)
-			new_square.get_node("TetrominoSquares-sheet").set_frame(Globals.Tetromino[board_array[i]])
+			new_square.set_frame(Globals.Tetromino[board_array[i]])
 	checkForFullRow()
 
 #Provided and array of array location, checks for overlap between the array and the board array

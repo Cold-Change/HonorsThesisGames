@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var cells = Globals.cells
 var tetromino = Globals.Tetromino
@@ -14,4 +14,4 @@ func initTetromino(tetromino_type):
 			new_square.position.y += i.y * 32
 			new_square.name = "TetrominoSquare"
 	for child in get_children():
-		child.get_node("TetrominoSquares-sheet").set_frame(tetromino[tetromino_type])
+		child.set_frame(tetromino[tetromino_type])
