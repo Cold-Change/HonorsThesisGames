@@ -12,6 +12,9 @@
 process_mode = 3
 script = ExtResource("1_g711u")
 
+[node name="Board" type="Node" parent="."]
+script = ExtResource("4_vkfov")
+
 [node name="Timers" type="Node" parent="."]
 
 [node name="MovementTimer" type="Timer" parent="Timers"]
@@ -27,6 +30,8 @@ autostart = true
 [node name="SlideBufferTimer" type="Timer" parent="Timers"]
 wait_time = 0.2
 one_shot = true
+
+[node name="Cleanup" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 384)
@@ -49,11 +54,6 @@ offset_right = 320.0
 offset_bottom = 640.0
 texture = ExtResource("2_pfuws")
 stretch_mode = 1
-
-[node name="Board" type="Node" parent="."]
-script = ExtResource("4_vkfov")
-
-[node name="Cleanup" type="Node" parent="."]
 
 [node name="Start" type="Control" parent="."]
 z_index = 2

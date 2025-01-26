@@ -322,7 +322,7 @@ func _on_cleanup_timer_timeout():
 		initCleanup()
 
 func _on_slide_timer_timeout():
-	if !slide_buffer_timer.time_left and !get_tree().paused:
+	if !slide_buffer_timer.time_left and !get_tree().paused and state == "Running":
 		if Input.is_action_pressed("right") and checkPositionOnMove("right"):
 			get_node("Tetromino").position.x += 32
 			if !board.checkForOverlap(convertTetrominoToArray()):

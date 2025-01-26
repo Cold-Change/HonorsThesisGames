@@ -11,10 +11,6 @@ scale = Vector2(2, 2)
 collision_layer = 2
 script = ExtResource("1_q72pb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_tc2an")
-
 [node name="Timers" type="Node" parent="."]
 
 [node name="CoyoteTime" type="Timer" parent="Timers"]
@@ -28,6 +24,10 @@ one_shot = true
 [node name="SpriteAnimationTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_tc2an")
 
 [node name="SpriteSheet" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, 0)

@@ -1,4 +1,3 @@
+res://Player/player.tscn
 res://platformer_level_1.tscn
-res://Player/player.gd
-res://Player/player_camera.gd
-res://Globals.gd
+res://Tilemaps/dungeon_tilemap.tscn
