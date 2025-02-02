@@ -7,7 +7,7 @@ extends Node2D
 
 @onready var ball = $Ball
 @onready var state = "start"
-@onready var paddle_zone = "Up2"
+
 var p1_score = 0
 var p2_score = 0
 var turn = 0

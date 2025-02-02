@@ -1,3 +1,2 @@
-res://board.tscn
-res://Ball/ball.gd
-res://Paddle/paddle.gd
+res://PongGame/pong_game.tscn
+res://PongGame/pong_game.gd

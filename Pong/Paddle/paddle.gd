@@ -9,8 +9,8 @@ func _physics_process(_delta):
 	var down_is_pressed : bool
 	
 	#Paddle movement is dictated by player 1 OR player 2
-	#Player 1 uses "WASD"
-	#Player 2 uses arrow keys
+	#Player 1 uses "W/S"
+	#Player 2 uses "UP/DOWN"
 	if player_num == 1:
 		Globals.paddle1_position = position
 		direction = Input.get_axis("up1","down1")

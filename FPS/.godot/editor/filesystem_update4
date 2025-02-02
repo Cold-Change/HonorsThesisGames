@@ -6,3 +6,4 @@ res://Player/third_person_camera.tscn
 res://Player/Gun/gun.tscn
 res://Player/Gun/bullet.tscn
 res://WorldObjects/Trees/tree_green.tscn
+res://CPU/enemy.tscn
