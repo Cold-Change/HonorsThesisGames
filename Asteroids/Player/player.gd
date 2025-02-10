@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 250
+@onready var init_speed = speed
 @export var acceleration = 400
 @onready var init_acceleration = acceleration
 @onready var friction = 100
@@ -65,9 +66,9 @@ func handleInvulnerability():
 
 func initInvulnerability():
 	area_2d.set_deferred("monitoring",false)
-	velocity = velocity / 2
-	acceleration = 200
-	friction = 50
+	speed *= 0.75
+	acceleration *= 0.5
+	friction *= 0.5
 	invulnerability_timer.start()
 
 func _on_area_2d_body_entered(body):
@@ -78,5 +79,6 @@ func _on_area_2d_body_entered(body):
 
 func _on_invulnerability_timeout():
 	area_2d.set_deferred("monitoring",true)
+	speed = init_speed
 	acceleration = init_acceleration
 	friction = init_friction
