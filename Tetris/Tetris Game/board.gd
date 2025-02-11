@@ -20,6 +20,7 @@ func lockTetrominoToBoard(tetromino_array,tetromino_type):
 	for i in range(40):
 		if board_array[i]:
 			gameOver.emit()
+	checkForFullRow()
 	updateBoard()
 
 #Displays un-displayed squares, clears empty spaces
@@ -39,7 +40,6 @@ func updateBoard():
 			new_square.position = Vector2(x + .5,y - 3.5) * 32
 			new_square.name = "Square" + str(i)
 			new_square.set_frame(Globals.Tetromino[board_array[i]])
-	checkForFullRow()
 
 #Provided and array of array location, checks for overlap between the array and the board array
 func checkForOverlap(tetromino_array):
@@ -51,32 +51,34 @@ func checkForOverlap(tetromino_array):
 	return true #There is no overlap
 
 func checkForFullRow():
-	var rows_to_clear = 0
+	var rows_to_clear = []
 	for row in range(24):
 		var row_is_full = true
 		for i in range(10):
 			if !board_array[row*10 + i]:
 				row_is_full = false
 		if row_is_full:
-			rows_to_clear += 1
-			clearRow(row)
-	if rows_to_clear >= 4:
-		increaseScore.emit(400 * Globals.level)
-	elif rows_to_clear >= 3:
+			rows_to_clear.append(row)
+	clearRows(rows_to_clear)
+	if len(rows_to_clear) >= 4:
+		increaseScore.emit(1000 * Globals.level)
+	elif len(rows_to_clear) >= 3:
+		increaseScore.emit(600 * Globals.level)
+	elif len(rows_to_clear) >= 2:
 		increaseScore.emit(300 * Globals.level)
-	elif rows_to_clear >= 2:
-		increaseScore.emit(200 * Globals.level)
-	elif rows_to_clear >= 1:
+	elif len(rows_to_clear) >= 1:
 		increaseScore.emit(100 * Globals.level)
 
-func clearRow(row):
+func clearRows(rows):
 	rowCleared.emit()
-	while row > 0:
-		for i in range(10):
-			board_array[row*10 + i] = board_array[row*10 + i - 10]
-		row -= 1
+	for row in rows:
+		while row > 0:
+			for i in range(10):
+				board_array[row*10 + i] = board_array[row*10 + i - 10]
+			row -= 1
 	updateBoard()
 
 func clearBoard():
 	board_array.fill('')
 	updateBoard()
+
