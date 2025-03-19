@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bd7na6lkx0wm5"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_nn2ak"]
+[ext_resource type="Script" path="res://damageManager.gd" id="1_nn2ak"]
 [ext_resource type="PackedScene" uid="uid://60cdyebmg7cd" path="res://Maps/Island/island.tscn" id="2_mfauv"]
 [ext_resource type="PackedScene" uid="uid://bnl5lsnwdas3i" path="res://Player/player.tscn" id="3_2rg5f"]
 [ext_resource type="PackedScene" uid="uid://c3fh4xbj7eio5" path="res://WorldObjects/Trees/tree_green.tscn" id="4_ho77k"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cm8i5e0iwl8ex" path="res://WorldObjects/Rocks/small_rock.tscn" id="9_tjq6v"]
 
 [node name="main" type="Node"]
-script = ExtResource("1_nn2ak")
 
 [node name="Island" parent="." instance=ExtResource("2_mfauv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103672, -25.1886, -0.18977)
@@ -295,3 +294,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26224, 1.82363, -3.38765)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_q35ig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84694, 1.83145, -2.32782)
+
+[node name="DamageManager" type="Node" parent="."]
+script = ExtResource("1_nn2ak")

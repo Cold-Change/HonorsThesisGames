@@ -81,5 +81,6 @@ terrain_set_0/terrain_0/color = Color(0.276238, 0.216995, 0.939733, 1)
 sources/0 = SubResource("TileSetAtlasSource_dpo6d")
 
 [node name="DungeonTilemapBackground" type="TileMap"]
+scale = Vector2(0.75, 0.75)
 tile_set = SubResource("TileSet_r4ptu")
 format = 2

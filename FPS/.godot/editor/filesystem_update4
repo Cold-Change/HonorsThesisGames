@@ -1,4 +1,5 @@
 res://test_level.tscn
+res://Player/Gun/gun.gd
 res://Player/player.gd
 res://Player/player_model.tscn
 res://Player/player.tscn
@@ -7,3 +8,4 @@ res://Player/Gun/gun.tscn
 res://Player/Gun/bullet.tscn
 res://WorldObjects/Trees/tree_green.tscn
 res://CPU/enemy.tscn
+res://CPU/enemy_model.tscn
